@@ -6,13 +6,10 @@
 
 ## General Info
 This browser based web application to ...
-<<<<<<< HEAD
-Hi, my name is Juan. I'll demonstrate git conflicts in this project.	
-
-=======
+Hi, my name is Juan. I'll demonstrate git conflicts in this project.
 Hi my name is Stefan. I'm excited about this project because our team is the best.
 Hi, my name is Atsuki. I am so excited about this project
->>>>>>> 17e9eb71cbaa0708163ee982599f78c2066ee32b
+
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
