@@ -7,6 +7,7 @@
 ## General Info
 This browser based web application to ...
 Hi my name is Stefan. I'm excited about this project because our team is the best.
+Hi, my name is Atsuki. I am so excited about this project
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
