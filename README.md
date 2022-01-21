@@ -6,7 +6,8 @@
 
 ## General Info
 This browser based web application to ...
-	
+Hi, my name is Juan. I'll demonstrate git conflicts in this project.	
+
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
