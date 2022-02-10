@@ -2,51 +2,118 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Travelr</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
-    <!-- Bootstrap link -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <title>Travelr</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
+  <!-- Bootstrap link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <a class="navbar-brand text-white" href="#">
-          <img src="./images/travelr_logo_1.png" height="48" width="48" class="m-2">
-          Travelr</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#">Learn</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#">Help</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Account
-              </a>
-              <div class="dropdown-menu text-white" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Jack</a>
-                <a class="dropdown-item" href="#">Settings</a>
-                <a class="dropdown-item" href="#">Log out</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  <!-- Top navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand text-white" href="#">
+      <img src="./images/travelr_logo_1.png" height="48" width="48" class="m-2">
+      Travelr</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Learn</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Help</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account
+          </a>
+          <div class="dropdown-menu text-white" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Jack</a>
+            <a class="dropdown-item" href="#">Settings</a>
+            <a class="dropdown-item" href="#">Log out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Welcome-->
+  <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+    <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+      <h1 class="display-4 fw-bold lh-1">Welcome to Travelr</h1>
+      <p class="lead">Travelr is an app that helps travelers connect with different cultures by sharing accommodation
+        during their stay in the city</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Join now</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Log In</button>
+      </div>
+    </div>
+    <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+      <img class="rounded-lg-3"
+        src="https://st2.depositphotos.com/1008450/7594/i/600/depositphotos_75943535-stock-photo-travel.jpg" alt=""
+        width="720">
+    </div>
+  </div>
+  <!-- Recruiting Groups-->
+  <p class="lead mb-6 mx-4">Groups recruiting for Vancouver</p>
+  <div class="card-group px-4">
+    <div class="card p-4">
+      <img src="https://cdn.discordapp.com/attachments/931645677304414300/941141998855933952/9k.png"
+        class="card-img-top" alt="Drink 1">
+      <div class="card-body">
+        <h5 class="card-title">Group 1</h5>
+        <p class="card-text">Welcome to my group. I would like to explore Vancouver's different cultures. Please join me
+          if you want to do the same.</p>
+        <p class="card-text"><small class="text-muted">Created 3 days ago</small></p>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Join</button>
+      </div>
+    </div>
+    <div class="card p-4">
+      <img src="https://st2.depositphotos.com/1008450/7594/i/600/depositphotos_75943541-stock-photo-travel.jpg"
+        class="card-img-top" alt="Drink 2">
+      <div class="card-body">
+        <h5 class="card-title">Group 2</h5>
+        <p class="card-text">Welcome to my group. I would like to explore Vancouver's different cultures. Please join me
+          if you want to do the same.</p>
+        <p class="card-text"><small class="text-muted">Created last week</small></p>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Join</button>
+      </div>
+    </div>
+    <div class="card p-4">
+      <img src="http://www.freecandie.com/wp-content/uploads/2014/11/Moose-Network-in-Alberta.jpg" class="card-img-top"
+        alt="Drink 3s">
+      <div class="card-body">
+        <h5 class="card-title">Group 3</h5>
+        <p class="card-text">Welcome to my group. I would like to explore Vancouver's different cultures. Please join me
+          if you want to do the same.</p>
+        <p class="card-text"><small class="text-muted">Created yesterday</small></p>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Join</button>
+      </div>
+    </div>
+  </div>
 
-      <!-- Scripts  -->
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>      
+  </div>
+
+
+  <!-- Scripts  -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
 </body>
 
