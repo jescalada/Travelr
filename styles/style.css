@@ -19,6 +19,7 @@ body {
   box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
   width: 520px;
   margin: auto;
+  left: 6%;
 }
 
 .search input {
@@ -45,3 +46,31 @@ body {
   height: 50px;
   width: 110px;
 }
+
+.titletext {
+  text-align: center;
+}
+
+#join {
+  position:relative;
+  left: 200px;
+  bottom: 50px;
+}
+
+.card{
+  display: flex;
+  position: relative;
+  left: 42%
+  
+}
+
+@media screen and (max-width: 990px) {
+  .justify-content-center .align-items-center {
+    flex: 50%;
+    min-width: 50%;
+    flex-shrink: 1;
+    left: 100%;
+  }
+
+}
+
