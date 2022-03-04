@@ -53,14 +53,14 @@ body {
 
 #join {
   position:relative;
-  left: 200px;
-  bottom: 50px;
+  left: 235px;
+  bottom: 90px;
 }
 
 .card{
   display: flex;
   position: relative;
-  left: 42%
+  left: 38%
   
 }
 
@@ -72,5 +72,19 @@ body {
     left: 100%;
   }
 
+}
+
+#group-pic {
+  position: relative;
+  top: 50px;
+  left: 10px
+
+
+}
+
+#Group_num, #Group_name, #Group_Member {
+  position: relative;
+  left: 100px;
+  bottom: 40px;
 }
 
