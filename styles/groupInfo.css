@@ -3,7 +3,5 @@
   }
 
 #join {
-    position:relative;
-    left: 180px;
-    bottom: 112px;
+    margin-left: 150px;
   }
