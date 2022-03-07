@@ -1,5 +1,6 @@
 .material-icons.md-48 {
   font-size: 48px;
+  color: white;
 }
 
 
@@ -15,4 +16,13 @@
     left: 100%;
   }
 
+}
+
+.icon-text {
+  color: rgb(231, 231, 231);
+  font-size: 1.5rem;
+  font-weight: light;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  margin: 0;
 }
