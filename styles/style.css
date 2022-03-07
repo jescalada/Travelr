@@ -7,19 +7,6 @@
   text-align: center;
 }
 
-#join {
-  position:relative;
-  left: 235px;
-  bottom: 90px;
-}
-
-.card{
-  display: flex;
-  position: relative;
-  left: 38%
-  
-}
-
 @media screen and (max-width: 990px) {
   .justify-content-center .align-items-center {
     flex: 50%;
@@ -29,18 +16,3 @@
   }
 
 }
-
-#group-pic {
-  position: relative;
-  top: 50px;
-  left: 10px
-
-
-}
-
-#Group_num, #Group_name, #Group_Member {
-  position: relative;
-  left: 100px;
-  bottom: 40px;
-}
-
