@@ -17,16 +17,17 @@ var uiConfig = {
         //------------------------------------------------------------------------------------------
         var user = authResult.user;                            // get the user object from the Firebase authentication database
         if (authResult.additionalUserInfo.isNewUser) {         //if new user
+          userName = generateUsername(user.displayName);
             db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
                     name: user.displayName,                    //"users" collection
                     email: user.email,                         //with authenticated user's ID (user.uid)
-                    username: "placeholder",
+                    username: userName,
                     age: "0",
-                    photo: "",
-                    status: "",
-                    description: "",
+                    photo: "https://soccerpointeclaire.com/wp-content/uploads/2021/06/default-profile-pic-e1513291410505.jpg",
+                    status: "I'm ready to Travel!",
+                    description: `Hi, I'm ${user.displayName}. Welcome to my profile!`,
                     groups: { },
-                    location: ""
+                    location: "Nowhere"
                 }).then(function () {
                     console.log("New user added to firestore");
                     window.location.assign("./main.html");       //re-direct to main.html after signup
@@ -62,5 +63,11 @@ var uiConfig = {
     // Privacy policy url.
     privacyPolicyUrl: '<your-privacy-policy-url>'
   };
+
+  function generateUsername(displayName) {
+    let trailingNumber = Math.floor(Math.random() * 10000); 
+    displayName = displayName.replace(/\s/g, '').toLowerCase();
+    return displayName + trailingNumber;
+  }
 
   ui.start('#firebaseui-auth-container', uiConfig);
