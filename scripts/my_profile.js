@@ -13,6 +13,8 @@ function insertUserData() {
 
                     //method #2:  insert using jquery
                     $("#navbarDropdownMenuLink").text(userData.name);
+                    $("#profile-full-name").text(userData.name);
+
                     $("#description").text(userData.description);
                     $("#email").text(userData.email);
                     $("#location").text(userData.location);
