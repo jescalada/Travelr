@@ -2,99 +2,99 @@
 <html lang="en">
 
 <head>
-    <title>Travelr</title>
-    <meta name="comp1800 template" content="Our 1800 App - Travelr">
+  <title>Travelr</title>
+  <meta name="comp1800 template" content="Our 1800 App - Travelr">
 
-    <!------------------------>
-    <!-- Required meta tags -->
-    <!------------------------>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!------------------------>
+  <!-- Required meta tags -->
+  <!------------------------>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!------------------------------------------>
-    <!-- Bootstrap Library CSS JS CDN go here -->
-    <!------------------------------------------>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  <!------------------------------------------>
+  <!-- Bootstrap Library CSS JS CDN go here -->
+  <!------------------------------------------>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
-    <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <!-------------------------------------------->
-    <!-- Other libraries and styles of your own -->
-    <!-------------------------------------------->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/search.css">
+  <!-------------------------------------------->
+  <!-- Other libraries and styles of your own -->
+  <!-------------------------------------------->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/search.css">
 
 </head>
 
 <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
 
-    <!-- our own navbar goes here -->
-    <nav id="navbarPlaceholder"></nav>
-    <div class="container justify-content-center">
-        <div class="justify-content-center align-items-center" style="padding-top: 10px; padding-bottom: 10px; padding-left: 270px; ">
-          <div class="col-md-8">
-            <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control"
-                placeholder="Where do you want to travel to?"> <button class="btn btn-primary" id="search">Search</button>
-            </div>
-          </div>
-        </div>
+  <!-- our own navbar goes here -->
+  <div class="main-search-input-wrap">
+    <div class="main-search-input fl-wrap">
+      <div class="main-search-input-item"> <input type="text" value="" placeholder="Which groups do you want to join?">
+      </div> <button class="main-search-button bg-primary">Search</button>
+    </div>
+    <div class="titletext">Recommended for you</div>
+    <div class="card border-primary mb-3" style="max-width: 20rem; height: 150px;">
+      <img class="rounded-circle" class="group-pic" width='80px' height='80px' alt="" src="./images/HG1.jpeg"
+        data-holder-rendered="true">
+      <div class="card-header" style="position: relative; left: 100px; bottom: 40px; background-color: white;">Group 1</div>
+      <div class="card-body text-primary">
+        <h5 class="card-title" style="position: relative; left: 100px; bottom: 40px;">Joe's group</h5>
+        <p class="card-text" style="position: relative; left: 100px; bottom: 40px;">1/4</p>
+        <button type="button" class="btn btn-primary" style="position: relative; left:230px; bottom: 85px;" >Join</button>
       </div>
+    </div>
+    <div class="card border-secondary mb-3" style="max-width: 20rem; height: 150px; ">
+      <img class="rounded-circle" class="group-pic" width='80px' height='80px' alt="" src="./images/HP1.jpeg"
+        data-holder-rendered="true">
+      <div class="card-header" style="position: relative; left: 100px; bottom: 40px;" >Group 2</div>
+      <div class="card-body text-secondary" style="position: relative; left: 80px; bottom: 40px;">
+        <h5 class="card-title">Nabil's group</h5>
+        <p class="card-text" >2/4</p>
+        <button type="button" class="btn btn-primary" style="position: relative; left:150px; bottom: 40px;">Join</button>
+      </div>
+    </div>
+    <div class="card border-success mb-3" style="max-width: 20rem; height: 150px;">
+      <img class="rounded-circle" class="group-pic" width='80px' height='80px' alt="" src="./images/HP3.jpeg"
+        data-holder-rendered="true">
+      <div class="card-header" style="position: relative; left: 100px; bottom: 40px;">Group 3</div>
+      <div class="card-body text-success">
+        <h5 class="card-title" style="position: relative; left: 100px; bottom: 40px;">John's group</h5>
+        <p class="card-text" style="position: relative; left: 100px; bottom: 40px;">3/4</p>
+        <button type="button" class="btn btn-primary"  style="position: relative; left:230px; bottom:80px";>Join</button>
+      </div>
+    </div>
+  </div>
 
-      <div class = "titletext">Recommended for you</div>
-      <div class="card border-primary mb-3" style="max-width: 20rem; height: 150px;" >
-        <img class="rounded-circle" id = "group-pic" width='80px' height='80px' alt="" src="./images/HG1.jpeg" data-holder-rendered="true">
-        <div class="card-header" id="Group_num">Group 1</div>
-        <div class="card-body text-primary">
-          <h5 class="card-title" id ="Group_name">Joe's group</h5>
-          <p class="card-text" id = "Group_Member">1/4</p>
-          <button type="button" class="btn btn-primary" id="join">Join</button>
-        </div>
-      </div>
-      <div class="card border-secondary mb-3" style="max-width: 20rem; height: 150px; ">
-        <img class="rounded-circle" id = "group-pic" width='80px' height='80px' alt="" src="./images/HP1.jpeg" data-holder-rendered="true">
-        <div class="card-header" id="Group_num">Group 2</div>
-        <div class="card-body text-secondary">
-          <h5 class="card-title" id ="Group_name">Nabil's group</h5>
-          <p class="card-text" id = "Group_Member">2/4</p>
-          <button type="button" class="btn btn-primary" id="join" >Join</button>
-        </div>
-      </div>
-      <div class="card border-success mb-3" style="max-width: 20rem; height: 150px;">
-        <img class="rounded-circle" id = "group-pic" width='80px' height='80px' alt="" src="./images/HP3.jpeg" data-holder-rendered="true">
-        <div class="card-header" id="Group_num">Group 3</div>
-        <div class="card-body text-success">
-          <h5 class="card-title" id ="Group_name">John's group</h5>
-          <p class="card-text" id = "Group_Member">3/4</p>
-          <button type="button" class="btn btn-primary" id="join" >Join</button>
-        </div>
-      </div>
-    
-    <!-- our own footer goes here-->
-    <nav id="footerPlaceholder"></nav>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-    <script src="./scripts/firebaseAPI_DTC15.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/script.js"></script>
-    <script src="./scripts/authentication.js"></script>
+
+  <!-- our own footer goes here-->
+  <nav id="footerPlaceholder"></nav>
+
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
+  <script src="./scripts/firebaseAPI_DTC15.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/authentication.js"></script>
 
 </body>
 
