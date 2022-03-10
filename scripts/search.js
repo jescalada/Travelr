@@ -1,8 +1,12 @@
 function createGroup() {
-    let groupName = $("group-name").val();
-    let location= $("location").val();
-    let maxSize = $("max-size").val();
-    let groupIntro = $("group-intro").val();
+    // let groupName = document.getElementById("group_name").value;
+    // let location = document.getElementById("location").value;
+    // let maxSize = document.getElementById("max_size").value;
+    // let groupIntro = document.getElementById("group_intro").value;
+    let groupName = $("#group_name").val();
+    let location= $("#location").val();
+    let maxSize = $("#max_size").val();
+    let groupIntro = $("#group_intro").val();
   
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -17,7 +21,7 @@ function createGroup() {
                       location: location,
                       max_size: maxSize,
                       group_intro: groupIntro,
-                      userID: {"user1": userID}
+                      userID: {"leader_id" : userID}
                   })                   
                   .then(function(){                                //new
                          window.location.href = "search.html";     //new
