@@ -21,9 +21,10 @@ function createGroup() {
                             location: location,
                             max_size: maxSize,
                             group_intro: groupIntro,
-                            userID: {
-                                "leader_id": userID
-                            }
+                            // First user represents the leader
+                            users: [
+                                userId,
+                            ]
                         })
                         .then(function () { //new
                             window.location.href = "search.html"; //new
