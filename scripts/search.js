@@ -21,9 +21,9 @@ function createGroup() {
                             location: location,
                             max_size: maxSize,
                             group_intro: groupIntro,
-                            // First user represents the leader
+                            // First user represents the leader 
                             users: [
-                                userId,
+                                userID,
                             ]
                         })
                         .then(function () { //new
@@ -69,7 +69,7 @@ function searchGroups() {
                         </li>
                         <li class="mr-md-4">
                         <i class="zmdi zmdi-account mr-2"></i>
-                        <p id="group-members-0" style="display: inline; margin-right: 1rem;">1/${group.max_size}</p>
+                        <p id="group-members-0" style="display: inline; margin-right: 1rem;">${group.users.length}/${group.max_size}</p>
                         </li>
                         <li class="mr-md-4">
                         <i class="zmdi zmdi-time mr-2"></i>
