@@ -100,13 +100,13 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card mb-3">
-                        <div class="card-body">
+                        <div class="card-body" id="profile-fields">
                             <div class="row">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">About Me</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary" id="description">
-                                    Placeholder
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form-control" id="description" placeholder="About me placeholder" disabled>
                                 </div>
                             </div>
                             <hr>
@@ -114,8 +114,8 @@
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Email</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary" id="email">
-                                    johndoe@gmail.com
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form-control" id="email" placeholder="Email placeholder" disabled>
                                 </div>
                             </div>
                             <hr>
@@ -123,8 +123,8 @@
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Location</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary" id="location">
-                                    Vancouver, BC
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form-control" id="location" placeholder="Location placeholder" disabled>
                                 </div>
                             </div>
                             <hr>
@@ -147,9 +147,11 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-12">
-                                    <a class="btn btn-info " target="__blank"
-                                        href="edit_profile.html">Edit</a>
+                                <div class="col-sm-1">
+                                    <button class="btn btn-info" onclick="editUserInfo()">Edit</button>
+                                </div>
+                                <div class="col-sm-1">
+                                    <button class="btn btn-info" onclick="saveUserInfo()">Save</button>
                                 </div>
                             </div>
                         </div>
