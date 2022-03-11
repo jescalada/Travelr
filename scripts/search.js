@@ -1,8 +1,4 @@
 function createGroup() {
-    // let groupName = document.getElementById("group_name").value;
-    // let location = document.getElementById("location").value;
-    // let maxSize = document.getElementById("max_size").value;
-    // let groupIntro = document.getElementById("group_intro").value;
     let groupName = $("#group_name").val();
     let location = $("#location").val();
     let maxSize = $("#max_size").val();
