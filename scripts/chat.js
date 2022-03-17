@@ -1,5 +1,3 @@
-document.getElementById("message-form").addEventListener("submit", sendMessage);
-
 function sendMessage(e) {
     e.preventDefault();
   
@@ -18,7 +16,9 @@ function sendMessage(e) {
   
     // create db collection and send in the data
     db.ref("messages/" + timestamp).set({
-      username,
+      // username,
       message,
     });
   }
+
+document.getElementById("message-form").addEventListener("submit", sendMessage);
