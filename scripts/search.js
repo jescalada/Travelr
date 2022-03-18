@@ -50,9 +50,10 @@ function searchGroups() {
         querySnapshot.forEach((doc, index) => {
             let group = doc.data();
             let html = `
-            <div id="result-container" class="my-4 job-box d-md-flex align-items-center justify-content-between mb-30">
+            <div id="result-container" class="my-4 job-box d-md-flex align-items-center justify-content-between mb-30" onclick="location.href='../groupInfo.html?id=${doc.id}';" style="cursor: pointer;">
                 <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
-                    <div id="group-img-${index}" class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
+                    <div id="group-img-${index}" class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex"
+                    style="background-image: url('https://media.istockphoto.com/photos/hiker-standing-in-forest-picture-id500878436');">
                     
                     </div>
 
