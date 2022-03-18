@@ -127,6 +127,10 @@ function saveUserInfo() {
     $("#edit-status-row").prop("hidden", true);
 
     $("#profile-pic").attr("src", photo);
+    $("#profile-full-name").text(name);
+    $("#status").text(status);
+
+
 }
 
 function getUserIdFromURL() {
