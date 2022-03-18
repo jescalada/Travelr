@@ -1,5 +1,5 @@
 function sendMessage(e) {
-    e.preventDefault();
+e.preventDefault();
   
     // get values to be submitted
     const timestamp = Date.now();
@@ -16,9 +16,24 @@ function sendMessage(e) {
   
     // create db collection and send in the data
     db.ref("messages/" + timestamp).set({
-      // username,
       message,
     });
   }
-
+  
+// add function call to the send button
 document.getElementById("message-form").addEventListener("submit", sendMessage);
+
+// receive message
+const fetchChat = db.ref("messages/");
+
+fetchChat.on("child_added", function (snapshot) {
+
+
+  const messages = snapshot.val();
+  const message = `<li><span>${messages.message}</li>`;
+  // class=${userName === messages.userName ? "sent" : "receive"}
+  
+  // append the message on the page
+  document.getElementById("messages").innerHTML += message;
+});
+
