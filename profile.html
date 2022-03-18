@@ -128,6 +128,33 @@
                                 </div>
                             </div>
                             <hr>
+                            <div id="edit-profile-pic-row" class="row" hidden>
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Profile Pic URL</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form-control" id="edit-profile-pic" placeholder="URL placeholder" disabled>
+                                </div>
+                                <hr>
+                            </div>
+                            <div id="edit-name-row" class="row" hidden>
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Name</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form-control" id="edit-profile-name" placeholder="Name placeholder" disabled>
+                                </div>
+                                <hr>
+                            </div>
+                            <div id="edit-status-row" class="row" hidden>
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Status</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form-control" id="edit-profile-status" placeholder="Status placeholder" disabled>
+                                </div>
+                                <hr>
+                            </div>
                             <div class="row">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Want to Visit</h6>
@@ -146,11 +173,11 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-1">
+                            <div id="change-info-buttons" class="row" hidden>
+                                <div id="edit-info-button" class="col-sm-1">
                                     <button class="btn btn-info" onclick="editUserInfo()">Edit</button>
                                 </div>
-                                <div class="col-sm-1">
+                                <div id="save-info-button" class="col-sm-1">
                                     <button class="btn btn-info" onclick="saveUserInfo()">Save</button>
                                 </div>
                             </div>
@@ -166,9 +193,7 @@
     <!--footer-->
     <nav id="footerPlaceholder"></nav>
 
-
     <!-- Scripts  -->
-
     <script src="./scripts/firebaseAPI_DTC15.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/script.js"></script>
@@ -176,7 +201,6 @@
     <script src="./scripts/profile.js"></script>
     <script src="./scripts/load_user.js"></script>
     
-
 </body>
 
 </html>

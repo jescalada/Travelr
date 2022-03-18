@@ -24,7 +24,7 @@ function insertUserData() {
                     .then(userDoc => {
                         let userData = userDoc.data();
                         console.log(`User data: ${JSON.stringify(userData)}`);
- 
+
                         // We insert the data into the front end using jQuery
                         $("#profile-full-name").text(userData.name);
 
@@ -33,11 +33,18 @@ function insertUserData() {
                         $("#location").val(userData.location);
 
                         $("#status").text(userData.status);
+
                         $("#username").text("@" + userData.username);
 
                         $("#profile-pic").attr("src", userData.photo);
 
-                        // Todo, append Edit functionality only if current user viewing own profile
+                        $("#edit-profile-name").val(userData.name);
+                        $("#edit-profile-pic").val(userData.photo);
+                        $("#edit-profile-status").val(userData.status);
+            
+                        // Append Edit functionality only if current user viewing own profile
+                        $("#change-info-buttons").prop('hidden', false);
+
                     })
             } else {
                 // User is logged in, but viewing someone else's profile
@@ -47,7 +54,7 @@ function insertUserData() {
                     .then(userDoc => {
                         let userData = userDoc.data();
                         console.log(`User data: ${JSON.stringify(userData)}`);
- 
+
                         // We insert the data into the front end using jQuery
                         $("#profile-full-name").text(userData.name);
 
@@ -60,7 +67,13 @@ function insertUserData() {
 
                         $("#profile-pic").attr("src", userData.photo);
 
-                        // Todo, append Edit functionality only if current user viewing own profile
+                        $("#edit-profile-name").val(userData.name);
+                        $("#edit-profile-pic").val(userData.photo);
+                        $("#edit-profile-status").val(userData.status);
+
+                        // Append Edit functionality only if current user viewing own profile
+                        $("#change-info-buttons").prop('hidden', true);
+
                     })
             }
 
@@ -74,12 +87,20 @@ function insertUserData() {
 function editUserInfo() {
     //Enable the form fields
     $("input").prop('disabled', false);
+
+    $("#edit-name-row").prop("hidden", false);
+    $("#edit-profile-pic-row").prop("hidden", false);
+    $("#edit-status-row").prop("hidden", false);
 }
 
 function saveUserInfo() {
     let aboutMe = $("#description").val(); //get the value of the field with id="description"
     let email = $("#email").val(); //get the value of the field with id="emial"
     let location = $("#location").val(); //get the value of the field with id="location"
+    
+    let name = $("#edit-profile-name").val();
+    let photo = $("#edit-profile-pic").val();
+    let status = $("#edit-profile-status").val();
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -88,7 +109,10 @@ function saveUserInfo() {
             currentUser.update({
                     description: aboutMe,
                     email: email,
-                    location: location
+                    location: location,
+                    name: name,
+                    photo: photo,
+                    status: status
                 })
                 .then(() => {
                     console.log("Document successfully updated!");
@@ -97,6 +121,12 @@ function saveUserInfo() {
         }
 
     });
+    
+    $("#edit-name-row").prop("hidden", true);
+    $("#edit-profile-pic-row").prop("hidden", true);
+    $("#edit-status-row").prop("hidden", true);
+
+    $("#profile-pic").attr("src", photo);
 }
 
 function getUserIdFromURL() {
