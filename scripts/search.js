@@ -46,6 +46,9 @@ function searchGroups() {
     query.get()
     .then((querySnapshot) => {
         $("#results").empty();
+        
+        $("#amount-groups-found").text(querySnapshot.size);
+        $("#location-queried").text(searchInput);
 
         querySnapshot.forEach((doc, index) => {
             let group = doc.data();
