@@ -1,4 +1,4 @@
-function insertName() {
+function loadUserInfo() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if user is signed in:
         if (user) {                                                                 
@@ -13,10 +13,12 @@ function insertName() {
                console.log(`User data: ${JSON.stringify(userDoc.data())}`);
                //method #2:  insert using jquery
                $("#navbarDropdownMenuLink").text(userName);                         //using jquery
+               $("#footer-profile-icon").attr("onclick", `location.href='../profile.html?id=${user.uid}';`)
             })
         } else {
             // No user is signed in.
         }
     });
 }
-insertName();
+
+loadUserInfo();
