@@ -1,7 +1,15 @@
 .material-icons.md-48 {
     font-size: 48px;
-  }
+}
 
-#join {
-    margin-left: 150px;
-  }
+#group-info-basic {
+  max-height: 40rem;
+}
+
+i, #group-location {
+  display: inline;
+}
+
+i {
+  color: gray;
+}
