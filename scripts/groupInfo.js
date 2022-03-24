@@ -3,56 +3,83 @@
 // LOGGED IN USER ACCESSING OWN GROUP AND MEMBER
 // LOGGED IN USER ACCESSING OTHER GROUP
 // ELSE: RETURN TO LOGIN PAGE
+
 var currentGroup;
 
 function loadGroup() {
     firebase.auth().onAuthStateChanged(user => {
-        let groupId = getGroupIdFromURL();
-        console.log("Group ID to query: " + groupId);
+            let groupId = getGroupIdFromURL();
+            // Check if user is signed in:
+            if (user) {
+                currentUser = db.collection("users").doc(user.uid);
+                //get the document for current user.
+                currentUser.get()
+                    .then(userDoc => {
+                        let userData = userDoc.data();
+                        currentGroup = db.collection("groups").doc(groupId);
 
-        // Check if user is signed in:
-        if (user) {
-            currentUser = db.collection("users").doc(user.uid);
-            //get the document for current user.
-            currentUser.get()
-                .then(userDoc => {
-                    let userData = userDoc.data();
-                    console.log(`User data: ${JSON.stringify(userData)}`);
+                        currentGroup.get()
+                            .then((groupDocument) => {
+                                let groupData = groupDocument.data();
 
-                    currentGroup = db.collection("groups").doc(groupId);
+                                $("#group-name").text(groupData.group_name);
+                                $("#group-intro").text(groupData.group_intro);
+                                $("#group-location").text(groupData.location);
 
-                    currentGroup.get()
-                        .then((groupDocument) => {
-                            let groupData = groupDocument.data();
-                            console.log("printed group!");
-                            console.log(JSON.stringify(groupData));
+                                // if user is leader of group
+                                if (groupData.users[0] == user.uid) {
+                                    // Todo append leader functionality (edit details)
+                                    console.log("I'm the leader");
+                                    $("#join").prop("disabled", true).text("Joined");
+                                }
+                                // if user is member of group
+                                else if (groupData.users.includes(user.uid, 1)) {
+                                    // Add see pictures functionality, group chat access, no Join button
+                                    console.log("I'm a member");
 
-                            $("#group-name").text(groupData.group_name);
-                            $("#group-intro").text(groupData.group_intro);
-                            $("#group-location").text(groupData.location);
+                                    $("#join").prop("disabled", true).text("Joined");
+                                }
+                                // else, user is accessing other group
+                                else {
+                                    // Add Join button, can only see public group pictures
+                                    console.log("Not in this group");
+                                }
 
-                            // if user is leader of group
-                            if (groupData.users[0] == user.uid) {
-                                // Todo append leader functionality (edit details)
-                                console.log("I'm the leader");
-                            }
-                            // if user is member of group
-                            else if (groupData.users.includes(user.uid, 1)) {
-                                // Add see pictures functionality, group chat access, no Join button
-                                console.log("I'm a member");
-                            }
-                            // else, user is accessing other group
-                            else {
-                                // Add Join button, can only see public group pictures
-                                console.log("Not in this group");
-                            }
-                        });
+                                groupData.users.forEach(userId => {
 
-                });
-        } else {
-            // No user is signed in.
-            // todo Do Something if no user logged in (redirect to login page?)
-        }
+                                    userDocument = db.collection("users").doc(userId);
+                                    //get the document for current user.
+                                    userDocument.get()
+                                        .then(userDoc => {
+                                            let userData = userDoc.data();
+                                            let userListItem = `
+                                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                                            <img src="${userData.photo}" alt="twbs" width="64" height="64"
+                                              class="rounded-circle flex-shrink-0">
+                                            <div class="d-flex gap-2 w-100 pt-2 justify-content-between">
+                                              <div>
+                                                <h6 class="mb-0">${userData.name}</h6>
+                                                <p class="mb-0 opacity-75">${userData.status}</p>
+                                              </div>
+                                              <small class="opacity-50 text-nowrap">Now</small>
+                                            </div>
+                                            </a>
+                                            `;
+
+                                            $("#member-list").append(userListItem);
+
+                                        });
+
+                                });
+
+                            });
+
+
+                    });
+
+            } else {
+                // No user currently signed in
+            };
     });
 
 }
@@ -60,7 +87,7 @@ function loadGroup() {
 function joinGroup() {
     let groupId = getGroupIdFromURL();
     let userId = getCurrentUserId();
-    
+
     currentUser = db.collection("users").doc(userId);
     //get the document for current user.
     currentUser.set({
@@ -70,23 +97,17 @@ function joinGroup() {
         })
         .then(function () {
             console.log("Group has been added for: " + currentUser);
-            //var iconID = 'save-' + hikeID;
-            //console.log(iconID);
-            //document.getElementById(iconID).innerText = 'bookmark';
         });
-    
-        currentGroup.set({
+
+    currentGroup.set({
             users: firebase.firestore.FieldValue.arrayUnion(userId)
         }, {
             merge: true
         })
         .then(function () {
             console.log("User has been added for: " + currentGroup);
-            //var iconID = 'save-' + hikeID;
-            //console.log(iconID);
-            //document.getElementById(iconID).innerText = 'bookmark';
+            location.reload();
         });
-    
 }
 
 function getGroupIdFromURL() {
