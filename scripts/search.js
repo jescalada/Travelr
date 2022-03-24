@@ -35,20 +35,21 @@ function createGroup() {
 }
 
 function searchGroups() {
-    let searchInput = $("#search-input").val();
-
+    //let searchInput = $("#search-input").val();
+    let queryLocation = getQueryLocationFromURL();
+    
     // Create a reference to the cities collection
     var groupsRef = db.collection("groups");
 
     // Create a query against the collection.
-    var query = groupsRef.where("location", "==", searchInput);
+    var query = groupsRef.where("location", "==", queryLocation);
     
     query.get()
     .then((querySnapshot) => {
         $("#results").empty();
         
         $("#amount-groups-found").text(querySnapshot.size);
-        $("#location-queried").text(searchInput);
+        $("#location-queried").text(queryLocation);
 
         querySnapshot.forEach((doc, index) => {
             let group = doc.data();
@@ -94,3 +95,15 @@ function searchGroups() {
         console.log("Error getting documents: ", error);
     });
 }
+
+function getQueryLocationFromURL() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    return urlParams.get('location');
+}
+
+function refreshQuery() {
+    location.href = "../search.html?location=" + $("#search-input").val();
+}
+
+searchGroups();
