@@ -26,7 +26,7 @@ var uiConfig = {
                     photo: "https://soccerpointeclaire.com/wp-content/uploads/2021/06/default-profile-pic-e1513291410505.jpg",
                     status: "I'm ready to Travel!",
                     description: `Hi, I'm ${user.displayName}. Welcome to my profile!`,
-                    groups: { },
+                    groups: [],
                     location: "Nowhere"
                 }).then(function () {
                     console.log("New user added to firestore");
