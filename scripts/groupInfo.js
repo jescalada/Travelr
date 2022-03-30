@@ -26,6 +26,8 @@ function loadGroup() {
                                 $("#group-intro").text(groupData.group_intro);
                                 $("#group-location").text(groupData.location);
 
+                                $("#group-photo").attr("src", groupData.group_photo);
+
                                 // if user is leader of group
                                 if (groupData.users[0] == user.uid) {
                                     // Todo append leader functionality (edit details)
