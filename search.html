@@ -63,7 +63,8 @@
               </div> <button class="main-search-button bg-primary" onclick="refreshQuery()">Search</button>
             </div>
           </div>
-          <!-- Create group model -->
+
+          <!-- Create group modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
@@ -86,9 +87,21 @@
                       <label for="recipient-name" class="col-form-label">Maximum Size</label>
                       <input type="text" class="form-control" id="max_size">
                     </div>
+                    <div class="row">
+                      <div class="col-lg-9 mb-3">
+                        <label for="message-text" class="col-form-label">Description</label>
+                        <textarea class="form-control" id="group_intro"></textarea>
+                      </div>
+                      <div class="col-lg-3 mb-3">
+                          <div class="mt-4 ml-2">
+                            <img src="https://t4.ftcdn.net/jpg/03/99/12/41/360_F_399124149_L3lTd03yuk7b0lhOhoqbJ0dc6Wjw6WQH.jpg" alt="pic"
+                                    class="rounded-circle" width="100" id="group-pic">
+                          </div>
+                      </div>
+                    </div>
                     <div class="mb-3">
-                      <label for="message-text" class="col-form-label">Description</label>
-                      <textarea class="form-control" id="group_intro"></textarea>
+                      <label for="recipient-name" class="col-form-label">Group Image URL</label>
+                      <input type="text" class="form-control" id="group-image-url" value="https://t4.ftcdn.net/jpg/03/99/12/41/360_F_399124149_L3lTd03yuk7b0lhOhoqbJ0dc6Wjw6WQH.jpg">
                     </div>
                   </form>
                 </div>

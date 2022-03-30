@@ -3,6 +3,7 @@ function createGroup() {
     let location = $("#location").val();
     let maxSize = $("#max_size").val();
     let groupIntro = $("#group_intro").val();
+    let groupPhotoURL = $("#group-image-url").val();
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -17,6 +18,7 @@ function createGroup() {
                             location: location,
                             max_size: maxSize,
                             group_intro: groupIntro,
+                            group_photo: groupPhotoURL,
                             // First user represents the leader 
                             users: [
                                 userID,
@@ -57,7 +59,7 @@ function searchGroups() {
             <div id="result-container" class="my-4 job-box d-md-flex align-items-center justify-content-between mb-30" onclick="location.href='../groupInfo.html?id=${doc.id}';" style="cursor: pointer;">
                 <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
                     <div id="group-img-${index}" class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex"
-                    style="background-image: url('https://media.istockphoto.com/photos/hiker-standing-in-forest-picture-id500878436');">
+                    style='background-image: url(${group.group_photo}); background-size: 64px 64px;'>
                     
                     </div>
 

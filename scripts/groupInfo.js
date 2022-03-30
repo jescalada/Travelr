@@ -78,7 +78,7 @@ function loadGroup() {
                     });
 
             } else {
-                // No user currently signed in
+                
             };
     });
 

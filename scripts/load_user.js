@@ -21,6 +21,7 @@ function loadUserInfo() {
             })
         } else {
             // No user is signed in.
+            window.location.href = "../login.html";
         }
     });
 }
