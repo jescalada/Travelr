@@ -24,9 +24,10 @@ function sendMessage(e) {
   }
 
   // add recieving function
+  document.getElementById("message-form").addEventListener("submit", sendMessage);
 
   const fetchChat = db.ref("messages/");
-  
+
   fetchChat.on("child_added", function (snapshot) {
     const messages = snapshot.val();
     const message = `<li class=${
