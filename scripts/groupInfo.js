@@ -38,7 +38,7 @@ function loadGroup() {
                                 // Todo append leader functionality (edit details)
                                 console.log("I'm the leader");
                                 $("#join").prop("disabled", true).text("Joined");
-                                $("#edit-group-details").prop("hidden", false);
+                                $("#edit-info-modal-button").prop("hidden", false);
                             }
                             // if user is member of group
                             else if (groupData.users.includes(user.uid, 1)) {

@@ -25,7 +25,7 @@ function createGroup() {
                             ]
                         })
                         .then(function () { //new
-                            window.location.href = "search.html"; //new
+                            window.location.href = `search.html?location=${location}`; //new
                         }); //new
                 })
 
