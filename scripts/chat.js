@@ -8,7 +8,7 @@ function initChat() {
   document.getElementById("friend").innerHTML = name;
 
   // generate a random 4 digit ID
-  chatid = Math.random().toString().substr(2, 4);
+  chatid = Math.random().toString().substring(2, 4);
   console.log(chatid);
   db.collection("chats").doc(chatid).set({
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
