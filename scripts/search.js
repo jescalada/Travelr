@@ -108,4 +108,10 @@ function refreshQuery() {
     location.href = "../search.html?location=" + $("#search-input").val();
 }
 
+function updateValue(e) {
+    const input = $('#group-image-url');
+    const img = $("#group-pic");
+    img.attr("src", input.val());
+}
+
 searchGroups();
