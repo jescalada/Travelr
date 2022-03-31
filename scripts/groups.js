@@ -20,11 +20,11 @@ function displayGroups() {
             //get the document for current group.
             groupDocument.get().then((groupDoc) => {
               let groupData = groupDoc.data();
-              let groupListItem = `
-                                            <div class="card card-cover h-100 overflow-hidden text-white bg-dark shadow-lg m-2" style='background-image: url(${groupData.group_photo});
-                                                        border-radius: 1em; background-size: cover;'>
+              let groupListItem = `       <div class="container">
+                                            <div class="card card-cover h-100 overflow-hidden text-white bg-dark shadow-lg" style='background-image: url(${groupData.group_photo});
+                                                        border-radius: 1em; background-size: 500px;'>
                                                 <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                                                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1">${groupData.group_name}</h3>
+                                                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-2">${groupData.group_name}</h3>
                                                     <ul class="d-flex list-unstyled mt-auto">
                                                         <li class="d-flex align-items-center me-3">
                                                             <svg xmlns="http://www.w3.org/2000/svg" class="bi me-2" width="1em" height="1em"
@@ -37,7 +37,7 @@ function displayGroups() {
                                                     </ul>
                                                 </div>
                                             </div>
-                                        `;
+                                          </div>`;
               $("#results").append(groupListItem);
             });
           }
