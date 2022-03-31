@@ -23,6 +23,19 @@ function sendMessage(e) {
     });
   }
 
+  // add recieving function
+
+  const fetchChat = db.ref("messages/");
+  
+  fetchChat.on("child_added", function (snapshot) {
+    const messages = snapshot.val();
+    const message = `<li class=${
+      username === messages.username ? "sent" : "receive"
+    }><span>${messages.username}: </span>${messages.message}</li>`;
+    // append the message on the page
+    document.getElementById("messages").innerHTML += message;
+  });
+
 
 
 
