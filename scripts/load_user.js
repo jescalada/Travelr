@@ -1,4 +1,5 @@
 var currentUserId;
+var currentUserName;
 
 function loadUserInfo() {
     firebase.auth().onAuthStateChanged(user => {
@@ -14,6 +15,7 @@ function loadUserInfo() {
             currentUser.get()
                   .then(userDoc => {
                var userName = userDoc.data().name;
+               currentUserName = userName;
                console.log(`User data: ${JSON.stringify(userDoc.data())}`);
                //method #2:  insert using jquery
                $("#navbarDropdownMenuLink").text(userName);                         //using jquery
@@ -29,4 +31,8 @@ loadUserInfo();
 
 function getCurrentUserId() {
     return currentUserId;
+}
+
+function getCurrentUserName() {
+    return currentUserName;
 }

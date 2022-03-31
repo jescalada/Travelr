@@ -5,6 +5,7 @@ function sendMessage(e) {
         const timestamp = Date.now();
         const messageInput = document.getElementById("message-input");
         const message = messageInput.value;
+        const senderName = getCurrentUserName();
       
         // clear the input box
         messageInput.value = "";
@@ -15,8 +16,9 @@ function sendMessage(e) {
           .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
       
         // create db collection and send in the data
-        db.ref("messages/" + timestamp).set({
-          message,
+        realtimeDb.ref("messages/" + timestamp).set({
+          message: message,
+          sender: senderName
         });
       }
       
@@ -24,16 +26,20 @@ function sendMessage(e) {
     document.getElementById("message-form").addEventListener("submit", sendMessage);
     
     // receive message
-    const fetchChat = db.ref("messages/");
+    const fetchChat = realtimeDb.ref("messages/");
     
     fetchChat.on("child_added", function (snapshot) {
     
     
       const messages = snapshot.val();
-      const message = `<li><span>${messages.message}</li>`;
+      const message = `
+        <li>
+            <div>${messages.sender} says: </div>
+            <p><span>${messages.message}</span></p>
+        </li>`;
       // class=${userName === messages.userName ? "sent" : "receive"}
       
       // append the message on the page
-      document.getElementById("messages").innerHTML += message;
+      $("#messages").append(message);
     });
     
