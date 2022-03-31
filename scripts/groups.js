@@ -1,99 +1,71 @@
-function createGroup() {
-    let groupName = $("#group_name").val();
-    let location = $("#location").val();
-    let maxSize = $("#max_size").val();
-    let groupIntro = $("#group_intro").val();
+function displayGroups() {
+    // //let searchInput = $("#search-input").val();
+    // let queryLocation = getQueryLocationFromURL();
+    
 
     firebase.auth().onAuthStateChanged(user => {
+
+        // Check if user is signed in:
         if (user) {
-            var currentUser = db.collection("users").doc(user.uid);
-            var userID = user.uid;
+            currentUser = db.collection("users").doc(user.uid);
             //get the document for current user.
             currentUser.get()
                 .then(userDoc => {
-                    // Start a new collection called groups and add all data in it.
-                    db.collection("groups").add({
-                            group_name: groupName,
-                            location: location,
-                            max_size: maxSize,
-                            group_intro: groupIntro,
-                            // First user represents the leader 
-                            users: [
-                                userID,
-                            ]
-                        })
-                        .then(function () { //new
-                            window.location.href = "search.html"; //new
-                        }); //new
-                })
+                    let userData = userDoc.data();
+                    let groupsArray = userData.groups;
+                    let numberOfGroups = groupsArray.length;
+                    let numberOfRows = Math.ceil(numberOfGroups / 3)
 
-        } else {
-            // No user is signed in.
-            console.log("no user signed in");
-        }
-    });
-}
+                    for (row = 0; row < numberOfRows; row++) {
+                        for(index = row * 3; index < row * 3 + 3; index++) {
+                            if (index >= numberOfGroups) break;
+                            console.log("inside");
+                            groupDocument = db.collection("groups").doc(groupsArray[index]);
+                        //get the document for current group.
+                        groupDocument.get()
+                            .then(groupDoc => {
+                                let groupData = groupDoc.data();
+                                let groupListItem = `
+                                
+                                            <div class="card card-cover h-100 overflow-hidden text-white bg-dark shadow-lg m-2" style='background-image: url(${groupData.group_photo});
+                                                        border-radius: 1em; background-size: 500px;'>
+                                                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1">Stefan's awesome group</h2>
+                                                    <ul class="d-flex list-unstyled mt-auto">
+                                                        <li class="me-auto">
+                                                            <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                                                class="rounded-circle border border-white">
+                                                        </li>
+                                                        <li class="d-flex align-items-center me-3">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="bi me-2" width="1em" height="1em"
+                                                                fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                                                            </svg>
+                                                            <small>Mars</small>
+                                                        </li>
+                                                        <li class="d-flex align-items-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="bi me-2" width="1em" height="1em"
+                                                                fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                                                                <path
+                                                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                                            </svg>
+                                                            <small>3d</small>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        `;
+                                $("#results").append(groupListItem);
+                            });
+                        }
+                    }
 
-function searchGroups() {
-    //let searchInput = $("#search-input").val();
-    let queryLocation = getQueryLocationFromURL();
-    
-    // Create a reference to the cities collection
-    var groupsRef = db.collection("groups");
-
-    // Create a query against the collection.
-    var query = groupsRef.where("location", "==", queryLocation);
-    
-    query.get()
-    .then((querySnapshot) => {
-        $("#results").empty();
-        
-        $("#amount-groups-found").text(querySnapshot.size);
-        $("#location-queried").text(queryLocation);
-
-        querySnapshot.forEach((doc, index) => {
-            let group = doc.data();
-            let html = `
-            <div id="result-container" class="my-4 job-box d-md-flex align-items-center justify-content-between mb-30" onclick="location.href='../groupInfo.html?id=${doc.id}';" style="cursor: pointer;">
-                <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
-                    <div id="group-img-${index}" class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex"
-                    style="background-image: url('https://media.istockphoto.com/photos/hiker-standing-in-forest-picture-id500878436');">
-                    
-                    </div>
-
-                    <div class="job-content">
-                    <h5 id="group-name-0" class="mx-5 text-md-left">${group.group_name}</h5>
-                    <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
-                        <li class="mr-md-4">
-                        <i class="zmdi zmdi-pin mr-2"></i>
-                        <p id="group-location-0" style="display: inline; margin-right: 1rem;">${group.location}</p>
-                        </li>
-                        <li class="mr-md-4">
-                        <i class="zmdi zmdi-account mr-2"></i>
-                        <p id="group-members-0" style="display: inline; margin-right: 1rem;">${group.users.length}/${group.max_size}</p>
-                        </li>
-                        <li class="mr-md-4">
-                        <i class="zmdi zmdi-time mr-2"></i>
-                        <p id="group-created-0" style="display: inline; margin-right: 1rem;">Created 1d Ago</p>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="job-right my-4 flex-shrink-0">
-                    <a href="#" class="btn d-block w-100 d-sm-inline-block btn-primary">Join</a>
-                </div>
-            </div>
-            `;
-
-            // doc.data() is never undefined for query doc snapshots
-            $("#results").append(html);
-            
-            console.log(doc.id, " => ", doc.data());
+                });
+            }
         });
-    })
-    .catch((error) => {
-        console.log("Error getting documents: ", error);
-    });
 }
 
 function getQueryLocationFromURL() {
@@ -106,4 +78,4 @@ function refreshQuery() {
     location.href = "../search.html?location=" + $("#search-input").val();
 }
 
-searchGroups();
+displayGroups();
