@@ -1,24 +1,23 @@
+// This file is used in every page, for loading user-related info onto the nav and footer, as well as making the current User's ID available globally 
+
 var currentUserId;
 var currentUserName;
 
+// Loads the user info onto the nav and footer.
 function loadUserInfo() {
     firebase.auth().onAuthStateChanged(user => {
-        // Check if user is signed in:
-        if (user) {                                                                 
-            // Do something for the current logged-in user here: 
-            console.log(user.uid);
+        // Check if user is signed in, then updates the DOM with their data:
+        if (user) {                                             
             currentUserId = user.uid;
-
-            //go to the correct user document by referencing to the user uid
+            // Go to the correct user document by referencing to the user uid
             currentUser = db.collection("users").doc(user.uid);
-            //get the document for current user.
+            // Get the document for current user.
             currentUser.get()
                   .then(userDoc => {
                var userName = userDoc.data().name;
                currentUserName = userName;
-               console.log(`User data: ${JSON.stringify(userDoc.data())}`);
-               //method #2:  insert using jquery
-               $("#navbarDropdownMenuLink").text(userName);                         //using jquery
+               // Insert various values to DOM using jquery
+               $("#navbarDropdownMenuLink").text(userName);
                $("#footer-profile-icon").attr("onclick", `location.href='../profile.html?id=${user.uid}';`)
             })
         } else {
@@ -27,7 +26,6 @@ function loadUserInfo() {
         }
     });
 }
-loadUserInfo();
 
 function getCurrentUserId() {
     return currentUserId;
@@ -36,3 +34,5 @@ function getCurrentUserId() {
 function getCurrentUserName() {
     return currentUserName;
 }
+
+loadUserInfo();

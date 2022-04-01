@@ -44,26 +44,17 @@
 </head>
 
 <body>
-  <!------------------------------>
-  <!-- Your HTML Layout go here -->
-  <!------------------------------>
-
   <!-- our own navbar goes here -->
   <nav id="navbarPlaceholder"></nav>
 
-  <!------------------------------>
-  <!-- the body of your page goes here -->
-  <!------------------------------>
-
-  <!-- group information jumbotron -->
+  <!-- Group information jumbotron -->
   <div class="container bg-light">
     <div class="d-flex flex-wrap row px-2 gx-4" id="group-info-basic">
       <div class="col-md-12 mt-4">
         <div class="h-100 p-5 bg-white border rounded-3">
-          <h2 id="group-name" class="pb-3 text-truncate">Joe's group</h2>
-          <p id="group-intro"> Welcome to our group! We are going to explore the great mountains of Vancouver and do a
-            lot
-            of kayaking!</p>
+          <!-- Placeholders for group information -->
+          <h2 id="group-name" class="pb-3 text-truncate"></h2>
+          <p id="group-intro"></p>
           <i class="zmdi zmdi-pin mr-2"></i>
           <p id="group-location">Default location</p>
           <div class="d-flex py-4">
@@ -121,13 +112,18 @@
         </div>
       </div>
     </div>
-
+    
+    <!-- Members and Group photos -->
     <div class="d-flex flex-wrap row p-2 gx-4">
+
+      <!-- Members -->
       <div class="col-md-6 mt-2">
         <h2 class="p-4 mx-4">Members</h2>
         <div class="list-group" id="member-list">
         </div>
       </div>
+      
+      <!-- Photos (Carousel) -->
       <div class="col-md-6 mt-4">
         <div class="h-100 bg-light rounded-3">
           <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -161,7 +157,6 @@
     </div>
 
   </div>
-  <!-- member's list using Boostrap Group list -->
 
   <!-- our own footer goes here-->
   <nav id="footerPlaceholder"></nav>
