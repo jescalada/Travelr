@@ -15,6 +15,16 @@
   border-radius: 2rem;
   font-size: larger;
   font-weight: bold;
+  color: white;
+}
+
+.btn-primary:disabled {
+  border-color: #EA6A1F;
+}
+
+.btn-primary:hover, .btn-outline-primary:hover {
+  border-color: #EA6A1F;
+  color: #110C96;
 }
 
 h1, h2, h3, nav, button {
@@ -57,4 +67,5 @@ body {
   min-height: 400px;
   margin-bottom: 100px;
   clear: both;
+  background-color: #f5f5ff !important;
 }

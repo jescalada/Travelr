@@ -157,15 +157,6 @@ function saveGroupInfo() {
         }
 
     });
-
-    $("#edit-name-row").prop("hidden", true);
-    $("#edit-profile-pic-row").prop("hidden", true);
-    $("#edit-status-row").prop("hidden", true);
-
-    $("#profile-pic").attr("src", photo);
-    $("#profile-full-name").text(name);
-    $("#status").text(status);
-
 }
 
 loadGroup();
