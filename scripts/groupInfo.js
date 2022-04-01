@@ -60,7 +60,7 @@ function loadGroup() {
                                     .then(userDoc => {
                                         let userData = userDoc.data();
                                         let userListItem = `
-                                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                                            <a href="profile.html?id=${userId}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
                                             <img src="${userData.photo}" alt="twbs" width="64" height="64"
                                               class="rounded-circle flex-shrink-0">
                                             <div class="d-flex gap-2 w-100 pt-2 justify-content-between">
