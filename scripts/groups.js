@@ -1,7 +1,4 @@
 function displayGroups() {
-  // //let searchInput = $("#search-input").val();
-  // let queryLocation = getQueryLocationFromURL();
-
   firebase.auth().onAuthStateChanged((user) => {
     // Check if user is signed in:
     if (user) {
