@@ -43,3 +43,21 @@ function sendMessage(e) {
       $("#messages").append(message);
     });
     
+
+
+    // <!--added chat in box>
+function appendChat(e) {
+  var id = e.target.id;
+  var notEmpty = $(".usertext").val() != "",
+      isEnterKeypress = e.type == "keypress" && e.keyCode == 13,
+      isSendClick = e.type == "click" && id == "send";
+
+  if( notEmpty && (isEnterKeypress || isSendClick) ) {
+    var txt = "<b>me:</b>"+$(".usertext").val();
+    $("#chatlog").append($("<li>").html(txt));
+    $(".usertext").val("");
+  }
+}
+
+$("#send").click(appendChat);
+$(".chav_box_in").keypress(appendChat);
