@@ -24,7 +24,11 @@
 
 .btn-primary:hover, .btn-outline-primary:hover {
   border-color: #EA6A1F;
-  color: purple;
+  color: #5624D0;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #994FB2;
 }
 
 h1, h2, h3, nav, button {
