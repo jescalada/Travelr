@@ -11,7 +11,7 @@ function createGroup() {
             var userID = user.uid;
             //get the document for current user.
             currentUser.get()
-                .then(userDoc => {
+                .then(function (userDoc) {
                     // Start a new collection called groups and add all data in it.
                     db.collection("groups").add({
                             group_name: groupName,
@@ -24,14 +24,20 @@ function createGroup() {
                                 userID,
                             ]
                         })
-                        .then(function () { //new
-                            window.location.href = `search.html?location=${location}`; //new
-                        }); //new
+                        .then(function (groupDoc) { //new
+                            currentUser.set({
+                                groups: firebase.firestore.FieldValue.arrayUnion(groupDoc.id)
+                            }, {
+                                merge: true
+                            })
+                            .then(function () {
+                                window.location.href = `search.html?location=${location}`; // Reload the page upon success
+                            });
+                            
+                        });
                 })
-
         } else {
-            // No user is signed in.
-            console.log("no user signed in");
+            window.location.href = 'login.html';
         }
     });
 }
