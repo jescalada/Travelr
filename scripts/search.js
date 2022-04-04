@@ -115,3 +115,9 @@ function updateValue(e) {
 }
 
 searchGroups();
+
+$(document).on('keypress',function(e) {
+    if(e.which == 13) {
+        refreshQuery();
+    }
+})

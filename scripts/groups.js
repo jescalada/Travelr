@@ -14,14 +14,14 @@ function displayGroups() {
           for (index = row * 3; index < row * 3 + 3; index++) {
             if (index >= numberOfGroups) break;
             groupDocument = db.collection("groups").doc(groupsArray[index]);
-            console.log("Group array in index is = " + groupsArray[index])
+            console.log("Group array in index is = " + groupsArray[index]);
             //get the document for current group.
             groupDocument.get().then((groupDoc) => {
               let groupData = groupDoc.data();
               let groupListItem = `       <div class="container">
                                             <div class="card card-cover h-100 overflow-hidden text-white bg-dark shadow-lg" style='background-image: url(${groupData.group_photo});
-                                                        border-radius: 1em; background-size: 500px;' onclick="location.href='../groupInfo.html?id=${groupDoc.id}';">
-                                                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                                        border-radius: 1em; background-size: 500px;'; onclick="location.href='../groupInfo.html?id=${groupDoc.id}';">
+                                                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" style="cursor: pointer;">
                                                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-2" style="color: white; text-shadow: 2px 2px 4px black, 0px 0px 20px black;">${groupData.group_name}</h3>
                                                     <ul class="d-flex list-unstyled mt-auto">
                                                         <li class="d-flex align-items-center me-3">
@@ -46,3 +46,14 @@ function displayGroups() {
 }
 
 displayGroups();
+
+
+function logout() {
+  console.log("logging out user");
+  firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+      window.location.href = "index.html";
+    }).catch((error) => {
+      // An error happened.
+    });
+}

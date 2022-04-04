@@ -1,34 +1,38 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <a class="navbar-brand text-white" href="#" style="margin-top: 0.25rem;">
-      <img src="./images/travelr_logo_white.svg" height="48" width="48" class="m-2">
-      <h3 style="display: inline; font-size: 1.5rem; margin-left: 4px;">Travelr</h3>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link text-white" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">Learn</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">Help</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Account
-          </a>
-          <div class="dropdown-menu text-white" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Jack</a>
-            <a class="dropdown-item" href="#">Settings</a>
-            <a class="dropdown-item" href="#">Log out</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <a class="navbar-brand text-white" href="#" style="margin-top: 0.25rem;">
+    <img src="./images/travelr_logo_white.svg" height="48" width="48" class="m-2">
+    <h3 style="display: inline; font-size: 1.5rem; margin-left: 4px;">Travelr</h3>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Learn</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Help</a>
+      </li>
+      <li class="nav-item dropdown">
+
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Account
+        </a>
+        <ul class="dropdown-menu text-white" aria-labelledby="navbarDarkDropdownMenuLink">
+          <li><a class="dropdown-item" href="#">My profile</a></li>
+          <li><a class="dropdown-item" href="#">My groups</a></li>
+          <li>
+            <hr class="dropdown-divider" style="color: grey">
+          </li>
+          <li><a class="dropdown-item" onclick="logout()">Log out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
