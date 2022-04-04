@@ -141,7 +141,7 @@ function saveGroupInfo() {
 
 loadGroup();
 
-
+// Logs out the current user
 function logout() {
     console.log("logging out user");
     firebase.auth().signOut().then(() => {
