@@ -69,3 +69,7 @@ body {
   clear: both;
   background-color: #f5f5ff !important;
 }
+
+.dropdown-item.active, .dropdown-item:active {
+  background-color: #FB9006;
+}
