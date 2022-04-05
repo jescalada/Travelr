@@ -27,7 +27,13 @@
   color: #5624D0;
 }
 
-.btn-outline-secondary:hover {
+.btn-secondary, .btn-outline-secondary {
+  border-radius: 2rem;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.btn-outline-secondary:hover{
   background-color: #994FB2;
 }
 
