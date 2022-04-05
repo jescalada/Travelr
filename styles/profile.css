@@ -50,3 +50,7 @@ body {
 .shadow-none {
     box-shadow: none!important;
 }
+
+#save-info-button button{
+    float: right;
+}
