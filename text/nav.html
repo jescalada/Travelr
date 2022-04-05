@@ -1,30 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <a class="navbar-brand text-white" href="../main.html" style="margin-top: 0.25rem;">
-    <img src="./images/travelr_logo_white.svg" height="48" width="48" class="m-2">
-    <h3 style="display: inline; font-size: 1.5rem; margin-left: 4px;">Travelr</h3>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-
-      <li class="nav-item dropdown">
-
-        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
-          data-bs-toggle="dropdown" aria-expanded="false">
-          Account
-        </a>
-        <ul class="dropdown-menu text-white" aria-labelledby="navbarDarkDropdownMenuLink">
-          <li><a class="dropdown-item" href="../profile.html">My profile</a></li>
-          <li><a class="dropdown-item" href="../groups.html">My groups</a></li>
-          <li>
-            <hr class="dropdown-divider" style="color: grey">
-          </li>
-          <li><a class="dropdown-item" onclick="logout()">Log out</a></li>
-        </ul>
-      </li>
-    </ul>
+<nav class="navbar navbar-expand navbar-light bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="../main.html" style="margin-top: 0.25rem;">
+      <img src="./images/travelr_logo_white.svg" height="48" width="48" class="m-2">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active text-white" style="display: inline; font-size: 1.5rem;" href="../main.html">Travelr</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li id="account-dropdown" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </a>
+          <ul class="dropdown-menu text-white" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item" href="../profile.html">My profile</a></li>
+            <li><a class="dropdown-item" href="../groups.html">My groups</a></li>
+            <li>
+              <hr class="dropdown-divider" style="color: grey">
+            </li>
+            <li><a class="dropdown-item" onclick="logout()">Log out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

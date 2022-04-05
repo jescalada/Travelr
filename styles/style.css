@@ -76,7 +76,6 @@ p {
 body {
   min-height: 400px;
   margin-bottom: 100px;
-  clear: both;
   background-color: #f5f5ff !important;
 }
 
