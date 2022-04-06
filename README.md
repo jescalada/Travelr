@@ -79,7 +79,7 @@ It has the following subfolders and files:
 
 ## Contact 
 * Atsuki Uchida -  
-* [Juan Escalada - jescalada@my.bcit.ca](jescalada@my.bcit.ca)
+* [Juan Escalada - jescalada@my.bcit.ca](mailto:jescalada@my.bcit.ca)
 * Stefan Chen - 
 
 ## Acknowledgements 

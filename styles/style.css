@@ -91,3 +91,7 @@ body {
   }
 
 }
+
+.firebaseui-container {
+  padding: 2rem;
+}
