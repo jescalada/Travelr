@@ -2,55 +2,54 @@
 <html>
 
 <head>
-  <title>Travelr</title>
-  <meta name="comp1800 template" content="Our 1800 App - Travelr">
+	<title>Travelr</title>
+	<meta name="comp1800 template" content="Our 1800 App - Travelr">
 
-  <!------------------------>
-  <!-- Required meta tags -->
-  <!------------------------>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!------------------------>
+	<!-- Required meta tags -->
+	<!------------------------>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!------------------------------------------>
-  <!-- Bootstrap Library CSS JS CDN go here -->
-  <!------------------------------------------>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
+	<!------------------------------------------>
+	<!-- Bootstrap Library CSS JS CDN go here -->
+	<!------------------------------------------>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+	</script>
 
-  <!-------------------------------------------------------->
-  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-  <!-------------------------------------------------------->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+	<!-------------------------------------------------------->
+	<!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+	<!-------------------------------------------------------->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-  <!-------------------------------------------->
-  <!-- Other libraries and styles of your own -->
-  <!-------------------------------------------->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/style.css">
-  <link rel="stylesheet" href="./styles/chat.css">
+	<!-------------------------------------------->
+	<!-- Other libraries and styles of your own -->
+	<!-------------------------------------------->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="./styles/style.css">
+	<link rel="stylesheet" href="./styles/chat.css">
 </head>
 
 <body>
-  <!-- Top navbar -->
-  <nav id="navbarPlaceholder"></nav>
+	<!-- Top navbar -->
+	<nav id="navbarPlaceholder"></nav>
 
-    <div class="container p-0">
-
+	<div class="container p-0">
 		<h1 class="h3 p-3">Messages</h1>
-        <!-- user list -->
+		<!-- user list -->
 		<div class="card">
 			<div class="row g-0">
 				<div class="col-12 col-lg-5 col-xl-3 border-right">
-
+					<!-- Search for users -->
 					<div class="px-4 d-none d-md-block">
 						<div class="d-flex align-items-center">
 							<div class="flex-grow-1">
@@ -58,278 +57,82 @@
 							</div>
 						</div>
 					</div>
-
+					<!-- User list -->
+					<!-- User List now has only a template user -->
 					<a href="#" class="list-group-item list-group-item-action border-0">
 						<div class="badge bg-success float-right">5</div>
 						<div class="d-flex align-items-start">
-							<img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="rounded-circle mr-1" alt="Vanessa Tucker" width="40" height="40">
+							<img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="rounded-circle mr-1"
+								alt="Vanessa Tucker" width="40" height="40">
 							<div class="flex-grow-1 ml-3">
-								Vanessa Tucker
+								John Smith
 								<div class="small"><span class="fas fa-circle chat-online"></span> Online</div>
-							</div>
-						</div>
-					</a>
-					<a href="#" class="list-group-item list-group-item-action border-0">
-						<div class="badge bg-success float-right">2</div>
-						<div class="d-flex align-items-start">
-							<img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle mr-1" alt="William Harris" width="40" height="40">
-							<div class="flex-grow-1 ml-3">
-								William Harris
-								<div class="small"><span class="fas fa-circle chat-online"></span> Online</div>
-							</div>
-						</div>
-					</a>
-					<a href="#" class="list-group-item list-group-item-action border-0">
-						<div class="d-flex align-items-start">
-							<img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
-							<div class="flex-grow-1 ml-3">
-								Sharon Lessman
-								<div class="small"><span class="fas fa-circle chat-online"></span> Online</div>
-							</div>
-						</div>
-					</a>
-					<a href="#" class="list-group-item list-group-item-action border-0">
-						<div class="d-flex align-items-start">
-							<img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="rounded-circle mr-1" alt="Christina Mason" width="40" height="40">
-							<div class="flex-grow-1 ml-3">
-								Christina Mason
-								<div class="small"><span class="fas fa-circle chat-offline"></span> Offline</div>
-							</div>
-						</div>
-					</a>
-					<a href="#" class="list-group-item list-group-item-action border-0">
-						<div class="d-flex align-items-start">
-							<img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="rounded-circle mr-1" alt="Fiona Green" width="40" height="40">
-							<div class="flex-grow-1 ml-3">
-								Fiona Green
-								<div class="small"><span class="fas fa-circle chat-offline"></span> Offline</div>
-							</div>
-						</div>
-					</a>
-					<a href="#" class="list-group-item list-group-item-action border-0">
-						<div class="d-flex align-items-start">
-							<img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle mr-1" alt="Doris Wilder" width="40" height="40">
-							<div class="flex-grow-1 ml-3">
-								Doris Wilder
-								<div class="small"><span class="fas fa-circle chat-offline"></span> Offline</div>
-							</div>
-						</div>
-					</a>
-					<a href="#" class="list-group-item list-group-item-action border-0">
-						<div class="d-flex align-items-start">
-							<img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="rounded-circle mr-1" alt="Haley Kennedy" width="40" height="40">
-							<div class="flex-grow-1 ml-3">
-								Haley Kennedy
-								<div class="small"><span class="fas fa-circle chat-offline"></span> Offline</div>
-							</div>
-						</div>
-					</a>
-					<a href="#" class="list-group-item list-group-item-action border-0">
-						<div class="d-flex align-items-start">
-							<img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle mr-1" alt="Jennifer Chang" width="40" height="40">
-							<div class="flex-grow-1 ml-3">
-								Jennifer Chang
-								<div class="small"><span class="fas fa-circle chat-offline"></span> Offline</div>
 							</div>
 						</div>
 					</a>
 
 					<hr class="d-block d-lg-none mt-1 mb-0">
-                <!-- chat box -->
+					<!-- Chat box -->
 				</div>
 				<div class="col-12 col-lg-7 col-xl-9">
 					<div class="py-2 px-4 border-bottom d-none d-lg-block">
+						<!-- Chat box header -->
 						<div class="d-flex align-items-center py-1">
 							<div class="position-relative">
-								<img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
+								<img src="https://bootdey.com/img/Content/avatar/avatar5.png"
+									class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
 							</div>
 							<div class="flex-grow-1 pl-3">
-								<strong>Username's group</strong>
+								<strong>John's group</strong>
 								<div class="text-muted small"><em>Typing...</em></div>
 							</div>
 							<div>
-								<button class="btn btn-primary btn-lg mr-1 px-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone feather-lg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></button>
+								<button class="btn btn-primary btn-lg mr-1 px-3"><svg xmlns="http://www.w3.org/2000/svg"
+										width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+										class="feather feather-phone feather-lg">
+										<path
+											d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+										</path>
+									</svg></button>
 							</div>
 						</div>
 					</div>
-
+					<!-- Chat box messages -->
 					<div class="position-relative">
 						<div id="messages" class="chat-messages p-4" style="height: 350px">
 
-							<div class="chat-message-right pb-4">
-								<div>
-									<img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
-									<div class="text-muted small text-nowrap mt-2">2:33 am</div>
-								</div>
-								<div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-									<div class="font-weight-bold mb-1">You</div>
-									Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.
-								</div>
-							</div>
-
-							<div class="chat-message-left pb-4">
-								<div>
-									<img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
-									<div class="text-muted small text-nowrap mt-2">2:34 am</div>
-								</div>
-								<div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-									<div class="font-weight-bold mb-1">Sharon Lessman</div>
-									Sit meis deleniti eu, pri vidit meliore docendi ut, an eum erat animal commodo.
-								</div>
-							</div>
-
-							<div class="chat-message-right mb-4">
-								<div>
-									<img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
-									<div class="text-muted small text-nowrap mt-2">2:35 am</div>
-								</div>
-								<div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-									<div class="font-weight-bold mb-1">You</div>
-									Cum ea graeci tractatos.
-								</div>
-							</div>
-
-							<div class="chat-message-left pb-4">
-								<div>
-									<img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
-									<div class="text-muted small text-nowrap mt-2">2:36 am</div>
-								</div>
-								<div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-									<div class="font-weight-bold mb-1">Sharon Lessman</div>
-									Sed pulvinar, massa vitae interdum pulvinar, risus lectus porttitor magna, vitae commodo lectus mauris et velit.
-									Proin ultricies placerat imperdiet. Morbi varius quam ac venenatis tempus.
-								</div>
-							</div>
-
-							<div class="chat-message-left pb-4">
-								<div>
-									<img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
-									<div class="text-muted small text-nowrap mt-2">2:37 am</div>
-								</div>
-								<div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-									<div class="font-weight-bold mb-1">Sharon Lessman</div>
-									Cras pulvinar, sapien id vehicula aliquet, diam velit elementum orci.
-								</div>
-							</div>
-
-							<div class="chat-message-right mb-4">
-								<div>
-									<img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
-									<div class="text-muted small text-nowrap mt-2">2:38 am</div>
-								</div>
-								<div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-									<div class="font-weight-bold mb-1">You</div>
-									Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.
-								</div>
-							</div>
-
-							<div class="chat-message-left pb-4">
-								<div>
-									<img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
-									<div class="text-muted small text-nowrap mt-2">2:39 am</div>
-								</div>
-								<div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-									<div class="font-weight-bold mb-1">Sharon Lessman</div>
-									Sit meis deleniti eu, pri vidit meliore docendi ut, an eum erat animal commodo.
-								</div>
-							</div>
-
-							<div class="chat-message-right mb-4">
-								<div>
-									<img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
-									<div class="text-muted small text-nowrap mt-2">2:40 am</div>
-								</div>
-								<div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-									<div class="font-weight-bold mb-1">You</div>
-									Cum ea graeci tractatos.
-								</div>
-							</div>
-
-							<div class="chat-message-right mb-4">
-								<div>
-									<img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
-									<div class="text-muted small text-nowrap mt-2">2:41 am</div>
-								</div>
-								<div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-									<div class="font-weight-bold mb-1">You</div>
-									Morbi finibus, lorem id placerat ullamcorper, nunc enim ultrices massa, id dignissim metus urna eget purus.
-								</div>
-							</div>
-
-							<div class="chat-message-left pb-4">
-								<div>
-									<img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
-									<div class="text-muted small text-nowrap mt-2">2:42 am</div>
-								</div>
-								<div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-									<div class="font-weight-bold mb-1">Sharon Lessman</div>
-									Sed pulvinar, massa vitae interdum pulvinar, risus lectus porttitor magna, vitae commodo lectus mauris et velit.
-									Proin ultricies placerat imperdiet. Morbi varius quam ac venenatis tempus.
-								</div>
-							</div>
-
-							<div class="chat-message-right mb-4">
-								<div>
-									<img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
-									<div class="text-muted small text-nowrap mt-2">2:43 am</div>
-								</div>
-								<div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-									<div class="font-weight-bold mb-1">You</div>
-									Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.
-								</div>
-							</div>
-
-							<div class="chat-message-left pb-4">
-								<div>
-									<img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
-									<div class="text-muted small text-nowrap mt-2">2:44 am</div>
-								</div>
-								<div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-									<div class="font-weight-bold mb-1">Sharon Lessman</div>
-									Sit meis deleniti eu, pri vidit meliore docendi ut, an eum erat animal commodo.
-								</div>
-							</div>
-
 						</div>
 					</div>
-                    <!-- type chat -->
-                    <div class="flex-grow-0 py-3 px-4 border-top">
-                        <form id="message-form">
-						<div class="input-group">
-							<textarea id= "message-input"class="form-control" placeholder="Type your message" rows="1" cols="30"></textarea>
-					        <i class="material-icons p-1" style="font-size: 36px;">g_translate</i>
-							<button class="btn btn-primary px-3" type="submit" style="border-radius: 6px;">Send</button>
-						</div>
-                        </form>
+					<!-- Chat box text input form -->
+					<div class="flex-grow-0 py-3 px-4 border-top">
+						<form id="message-form">
+							<div class="input-group">
+								<textarea id="message-input" class="form-control" placeholder="Type your message"
+									rows="1" cols="30"></textarea>
+								<!-- Chat Footer Buttons -->
+								<i class="material-icons p-1" style="font-size: 36px;">g_translate</i>
+								<button class="btn btn-primary px-3" type="submit"
+									style="border-radius: 6px;">Send</button>
+							</div>
+						</form>
 					</div>
-
-
-
-					<!-- <div class="flex-grow-0 py-3 px-4 border-top">
-						<div class="input-group">
-							
-                            <button class="btn btn-primary">Send</button>
-						</div>
-					</div> -->
-
 				</div>
 			</div>
 		</div>
 	</div>
- 
-  <!--footer-->
-  <nav id="footerPlaceholder"></nav>
 
+	<!--footer-->
+	<nav id="footerPlaceholder"></nav>
 
-  <!-- Scripts  -->
-  
-  <script src="./scripts/firebaseAPI_DTC15.js"></script>
-  <script src="./scripts/realtime_API_DTC15.js"></script>
-  <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/script.js"></script>
-  <script src="./scripts/authentication.js"></script>
-  <script src="./scripts/load_user.js"></script>
-  <script src="./scripts/chat.js"></script>
+	<!-- Scripts  -->
+	<script src="./scripts/firebaseAPI_DTC15.js"></script>
+	<script src="./scripts/realtime_API_DTC15.js"></script>
+	<script src="./scripts/skeleton.js"></script>
+	<script src="./scripts/script.js"></script>
+	<script src="./scripts/authentication.js"></script>
+	<script src="./scripts/load_user.js"></script>
+	<script src="./scripts/chat.js"></script>
 
 </body>
 
