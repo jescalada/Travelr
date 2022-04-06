@@ -67,6 +67,7 @@ body {
   min-height: 400px;
   margin-bottom: 100px;
   background-color: #f5f5ff !important;
+  overflow-x: hidden;
 }
 
 .dropdown-menu {
@@ -75,6 +76,10 @@ body {
 
 .dropdown-item.active, .dropdown-item:active {
   background-color: #FB9006;
+}
+
+.dropdown-item:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 990px) {

@@ -1,6 +1,6 @@
 .material-icons.md-48 {
     font-size: 48px;
-  }
+}
 
 body {
     background-color: rgb(247, 245, 247);
@@ -85,6 +85,10 @@ h2 {
 
 #carouselExampleIndicators {
     margin-top: 180px;
+}
+
+.carousel-item img {
+    width: auto;
 }
 
 @media only screen and (max-width: 768px) {
