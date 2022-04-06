@@ -1,3 +1,4 @@
+// Travelr's Firebase configuration
 const firebaseConfig = {
 
     apiKey: "AIzaSyDsmiWpuLL69R3E7VD7DPtbf8P5WuDj7vE",
@@ -14,5 +15,6 @@ const firebaseConfig = {
 
 };
 
+// Initialize the Firebase app, get a reference to the database
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();

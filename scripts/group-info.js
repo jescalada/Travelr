@@ -99,7 +99,7 @@ function joinGroup() {
         });
 }
 
-// Gets the group Id form the URL
+// Gets the group Id from the URL
 function getGroupIdFromURL() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -131,7 +131,7 @@ function saveGroupInfo() {
                     group_photo: groupPictureURL
                 })
                 .then(() => {
-                    window.location.href = `groupInfo.html?id=${groupId}` // after successfully editing refresh to show new data
+                    window.location.href = `group-info.html?id=${groupId}` // after successfully editing refresh to show new data
                 })
         } else {
             window.location.href = "../login.html"; // Redirect to login page if not logged in
