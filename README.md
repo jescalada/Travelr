@@ -1,47 +1,90 @@
-## My Web Application (Add your Title here)
+## Travelr
 
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
+* [Resources](#resources)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
 ## General Info
-This browser based web application to ...
-Hi, my name is Juan. I'll demonstrate git conflicts in this project.
-Hi my name is Stefan. I'm excited about this project because our team is the best.
-Hi, my name is Atsuki. I am so excited about this project, welcome to travelr.
-
+Travelr is an app that allows users to form groups and chat together so they can find a place to stay in big cities.
+	
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
-* JavaScript
-* Bootstrap 
-* ...
-	
+* JavaScript, jQuery
+* Bootstrap
+* Firebase and Firestore 
+* Netlify
+
 ## Content
 Content of the project folder:
 
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
-└── README.md
+├── index.html               # landing HTML file, this is what users see when they visit the root path (travelr-bcit.netlify.app/)
+└── README.md                # woah, you're reading this now!
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
+
+├── html                     # Folder for html files
+        /chat.html           # chat HTML file, what users see when they click on Chats
+        /group-info.html     # group info HTML file, what users see when they access a group
+        /groups.html         # group list HTML file, what users see when they click on Groups (view all the groups)
+        /login.html          # login HTML file, the log-in page
+        /main.html           # main HTML file, the page users see after logging in
+        /profile.html        # profile HTML file, what users see when they click on Me in the footer menu
+        /search.html         # search HTML file, the search results page 
+
 ├── images                   # Folder for images
-    /blah.jpg                # 
-├── scripts                  # Folder for scripts
-    /blah.js                 # 
-├── styles                   # Folder for styles
-    /blah.css                # 
+        /icons
+            /travelr-logo.svg
+        /login.jpg
+        
+├── scripts                         # Folder for scripts
+        /authentication.js          # Firebase authentication backend
+        /chat.js                    # JS for chat.html
+        /firebaseAPI_DTC15.js       # firebase API stuff, shared across pages
+        /group-info.js              # JS for group-info.html
+        /groups.js                  # JS for groups.html
+        /load-user.js               # loads user into frontend, shared across pages
+        /main.js                    # JS for main.html
+        /profile.js                 # JS for profile.html
+        /realTime_API_DTC15.js      # firebase Realtime DB API, used only in chat.html
+        /search.js                  # JS for search.html
+        /skeleton.js                # loads navbar and footer, shared across pages
 
-Firebase hosting files: 
-├── .firebaserc...
+├── styles                          # Folder for styles
+        /chat.css                   # style for chat.html
+        /group-info.css             # style for group-info.html
+        /main.css                   # style for main.html
+        /profile.css                # style for profile.html
+        /search.css                 # style for search.html
+        /style.css                  # generic stylesheet for all pages
 
+├── text                            # Folder for text containers
+        /footer.html                # code snippet for generating the footer
+        /nav.html                   # code snippet for generating the navbar
 
 ```
 
-Tips for file naming files and folders:
-* use lowercase with no spaces
-* use dashes (not underscore) for word separation
 
+## Resources
+- Icons by [Iconify Design](https://icon-sets.iconify.design/zmdi/) (Open Source)
+- Code snippets from [Bootdey](https://www.bootdey.com/) (Free to use)
+- Logo made by Juan
+
+## Contact 
+* Atsuki Uchida -  
+* [Juan Escalada - jescalada@my.bcit.ca](jescalada@my.bcit.ca)
+* Stefan Chen - 
+
+## Acknowledgements 
+* <a href="https://ajax.googleapis.com/">jQuery</a>
+* <a href="https://fonts.google.com/">Google Fonts</a>
+
+* <a href="https://getbootstrap.com/">Bootstrap</a>
+* <a href="https://www.bootdey.com/">Bootdey (Bootstrap snippets)</a>
