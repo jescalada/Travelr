@@ -96,13 +96,6 @@ ul {
   border-radius: 10px;
 }
 
-@media (min-width: 992px) {
-  .job-overview {
-    position: sticky;
-    top: 70px;
-  }
-}
-
 .job-overview .job-detail ul {
   margin-bottom: 28px;
 }
@@ -129,13 +122,6 @@ ul {
   opacity: 0.75;
   border-bottom: 1px solid #ccc;
   padding: 10px 5px;
-}
-
-@media (min-width: 768px) {
-  .job-content ul li {
-    border-bottom: 0;
-    padding: 0;
-  }
 }
 
 .job-content ul li i {
@@ -201,7 +187,6 @@ body {
   padding-left: 20px
 }
 
-
 .main-search-button {
   position: absolute;
   right: 0px;
@@ -228,6 +213,20 @@ body {
 
 #carouselExampleIndicators {
   margin-top: 100px;
+}
+
+@media (min-width: 992px) {
+  .job-overview {
+    position: sticky;
+    top: 70px;
+  }
+}
+
+@media (min-width: 768px) {
+  .job-content ul li {
+    border-bottom: 0;
+    padding: 0;
+  }
 }
 
 @media only screen and (max-width: 768px) {
