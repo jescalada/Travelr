@@ -1,3 +1,4 @@
+// Gets the current user's groups from the backend and displays them in the frontend
 function displayGroups() {
   firebase.auth().onAuthStateChanged((user) => {
     // Check if user is signed in:
@@ -5,11 +6,13 @@ function displayGroups() {
       currentUser = db.collection("users").doc(user.uid);
       //get the document for current user.
       currentUser.get().then((userDoc) => {
+        // Store the user data into a variable
         let userData = userDoc.data();
         let groupsArray = userData.groups;
+        // Calculate the rows and columns
         let numberOfGroups = groupsArray.length;
         let numberOfRows = Math.ceil(numberOfGroups / 3);
-
+        // Appends the group data to the DOM using for loops (originally this was meant for styling the rows and columns)
         for (row = 0; row < numberOfRows; row++) {
           for (index = row * 3; index < row * 3 + 3; index++) {
             if (index >= numberOfGroups) break;
@@ -17,26 +20,7 @@ function displayGroups() {
             console.log("Group array in index is = " + groupsArray[index]);
             //get the document for current group.
             groupDocument.get().then((groupDoc) => {
-              let groupData = groupDoc.data();
-              let groupListItem = `       <div class="container">
-                                            <div class="card card-cover h-100 overflow-hidden text-white bg-dark shadow-lg" style='background-image: url(${groupData.group_photo});
-                                                        border-radius: 1em; background-size: 500px;'; onclick="location.href='../groupInfo.html?id=${groupDoc.id}';">
-                                                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" style="cursor: pointer;">
-                                                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-2" style="color: white; text-shadow: 2px 2px 4px black, 0px 0px 20px black;">${groupData.group_name}</h3>
-                                                    <ul class="d-flex list-unstyled mt-auto">
-                                                        <li class="d-flex align-items-center me-3">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="bi me-2" width="1em" height="1em" style="color: white; text-shadow: 2px 2px 4px black, 0px 0px 20px black;"
-                                                                fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-                                                            </svg>
-                                                            <small style="color: white; text-shadow: 2px 2px 4px black, 0px 0px 20px black;">${groupData.location}</small>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                          </div>`;
-              $("#results").append(groupListItem);
+              loadGroupDoc(groupDoc);
             });
           }
         }
@@ -45,15 +29,30 @@ function displayGroups() {
   });
 }
 
-displayGroups();
-
-
-function logout() {
-  console.log("logging out user");
-  firebase.auth().signOut().then(() => {
-      // Sign-out successful.
-      window.location.href = "index.html";
-    }).catch((error) => {
-      // An error happened.
-    });
+// Takes a groupDoc and adds the data within it to the DOM
+function loadGroupDoc(groupDoc) {
+  let groupData = groupDoc.data();
+  let groupListItem = `
+  <div class="container">
+   <div class="card card-cover h-100 overflow-hidden text-white bg-dark shadow-lg" style='background-image: url(${groupData.group_photo});
+    border-radius: 1em; background-size: 500px;'; onclick="location.href='../groupInfo.html?id=${groupDoc.id}';">
+    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" style="cursor: pointer;">
+      <h3 class="pt-5 mt-5 mb-4 display-6 lh-2" style="color: white; text-shadow: 2px 2px 4px black, 0px 0px 20px black;">${groupData.group_name}</h3>
+       <ul class="d-flex list-unstyled mt-auto">
+        <li class="d-flex align-items-center me-3">
+         <svg xmlns="http://www.w3.org/2000/svg" class="bi me-2" width="1em" height="1em" style="color: white; text-shadow: 2px 2px 4px black, 0px 0px 20px black;"
+         fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+        <path
+        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+        </svg>
+        <small style="color: white; text-shadow: 2px 2px 4px black, 0px 0px 20px black;">${groupData.location}</small>
+        </li>
+      </ul>
+    </div>
+  </div>
+ </div>
+`;
+  $("#results").append(groupListItem);
 }
+
+displayGroups();
