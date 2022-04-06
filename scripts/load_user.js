@@ -16,9 +16,10 @@ function loadUserInfo() {
                   .then(userDoc => {
                var userName = userDoc.data().name;
                currentUserName = userName;
-               // Insert various values to DOM using jquery
+               // Insert various user parameters to DOM using jquery
                $("#navbarDropdownMenuLink").text(userName);
-               $("#footer-profile-icon").attr("onclick", `location.href='../profile.html?id=${user.uid}';`)
+               $("#my-profile-link-navbar").attr("onclick", `location.href='../profile.html?id=${user.uid}';`);
+               $("#footer-profile-icon").attr("onclick", `location.href='../profile.html?id=${user.uid}';`);
             })
         } else {
             // No user is signed in.
@@ -27,23 +28,15 @@ function loadUserInfo() {
     });
 }
 
+// Returns the current user's ID to be used in other pages
 function getCurrentUserId() {
     return currentUserId;
 }
 
+// Returns the current user's Name to be used in other page (chat page only)
 function getCurrentUserName() {
     return currentUserName;
 }
 
+// User info is loaded by default in all pages
 loadUserInfo();
-
-// Logs out the current user
-function logout() {
-    console.log("logging out user");
-    firebase.auth().signOut().then(() => {
-        // Sign-out successful.
-        window.location.href = "index.html";
-      }).catch((error) => {
-        // An error happened.
-      });
-}
