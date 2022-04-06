@@ -87,7 +87,7 @@ function insertUserData() {
 function editUserInfo() {
     //Enable the form fields
     $("input").prop('disabled', false);
-
+    $("#email").prop('disabled', true);
     $("#edit-name-row").prop("hidden", false);
     $("#edit-profile-pic-row").prop("hidden", false);
     $("#edit-status-row").prop("hidden", false);
