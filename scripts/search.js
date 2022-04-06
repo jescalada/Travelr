@@ -37,7 +37,7 @@ function addGroupToDatabase(userID) {
                     merge: true
                 })
                 .then(function () {
-                    window.location.href = `search.html?location=${location}`; // Reload the page upon success
+                    window.location.href = `../html/search.html?location=${location}`; // Reload the page upon success
                 });
         });
 }
@@ -67,7 +67,7 @@ function searchGroups() {
 // Generates the HTML div to be appended to the DOM
 function groupResultHTML(group, index, doc) {
     let html = `
-            <div id="result-container" class="my-4 job-box d-md-flex align-items-center justify-content-between mb-30" onclick="location.href='../groupInfo.html?id=${doc.id}';" style="cursor: pointer;">
+            <div id="result-container" class="my-4 job-box d-md-flex align-items-center justify-content-between mb-30" onclick="location.href='../html/group-info.html?id=${doc.id}';" style="cursor: pointer;">
                 <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
                     <div id="group-img-${index}" class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex"
                     style='background-image: url(${group.group_photo}); background-size: 64px 64px;'>
@@ -109,7 +109,7 @@ function getQueryLocationFromURL() {
 
 // Refreshes the page with whatever is written on the search box at the time
 function refreshQuery() {
-    location.href = "../search.html?location=" + $("#search-input").val();
+    location.href = "../html/search.html?location=" + $("#search-input").val();
 }
 
 // Refreshes the group picture when the input box is changed

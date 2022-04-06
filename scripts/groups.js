@@ -35,7 +35,7 @@ function loadGroupDoc(groupDoc) {
   let groupListItem = `
   <div class="container">
    <div class="card card-cover h-100 overflow-hidden text-white bg-dark shadow-lg" style='background-image: url(${groupData.group_photo});
-    border-radius: 1em; background-size: 500px;'; onclick="location.href='../group-info.html?id=${groupDoc.id}';">
+    border-radius: 1em; background-size: 500px;'; onclick="location.href='../html/group-info.html?id=${groupDoc.id}';">
     <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" style="cursor: pointer;">
       <h3 class="pt-5 mt-5 mb-4 display-6 lh-2" style="color: white; text-shadow: 2px 2px 4px black, 0px 0px 20px black;">${groupData.group_name}</h3>
        <ul class="d-flex list-unstyled mt-auto">

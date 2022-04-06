@@ -29,7 +29,7 @@ function loadGroup() {
                         });
                 });
         } else {
-            window.location.href = "../login.html";
+            window.location.href = "../html/login.html";
         };
     });
 }
@@ -37,7 +37,7 @@ function loadGroup() {
 // loadUserData appends a new user to the group's user list, given a userId and a JSON containing userData
 function loadUserData(userId, userData) {
     let userListItem = `
-    <a href="profile.html?id=${userId}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+    <a href="../html/profile.html?id=${userId}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
     <img src="${userData.photo}" alt="twbs" width="64" height="64"
       class="rounded-circle flex-shrink-0">
     <div class="d-flex gap-2 w-100 pt-2 justify-content-between">
@@ -131,10 +131,10 @@ function saveGroupInfo() {
                     group_photo: groupPictureURL
                 })
                 .then(() => {
-                    window.location.href = `group-info.html?id=${groupId}` // after successfully editing refresh to show new data
+                    window.location.href = `../html/group-info.html?id=${groupId}` // after successfully editing refresh to show new data
                 })
         } else {
-            window.location.href = "../login.html"; // Redirect to login page if not logged in
+            window.location.href = "../html/login.html"; // Redirect to login page if not logged in
         }
     });
 }

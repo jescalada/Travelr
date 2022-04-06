@@ -30,7 +30,7 @@ var uiConfig = {
             location: "Nowhere"
           }).then(function () {
             console.log("New user added to firestore");
-            window.location.assign("./main.html"); // Redirects to main.html after signup
+            window.location.assign("../html/main.html"); // Redirects to main.html after signup
           })
           .catch(function (error) {
             console.log("Error adding new user: " + error);
@@ -48,7 +48,7 @@ var uiConfig = {
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
-  signInSuccessUrl: './main.html',
+  signInSuccessUrl: '../html/main.html',
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.EmailAuthProvider.PROVIDER_ID,

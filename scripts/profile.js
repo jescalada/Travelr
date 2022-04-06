@@ -90,7 +90,7 @@ function updateDatabase(user) {
                     status: status
                 })
                 .then(() => {
-                    window.location.href = `profile.html?id=${user.uid}` // Refreshes the page if successfully edited profile
+                    window.location.href = `../html/profile.html?id=${user.uid}` // Refreshes the page if successfully edited profile
                 })
 }
 

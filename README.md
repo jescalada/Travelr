@@ -78,9 +78,9 @@ It has the following subfolders and files:
 - Logo made by Juan
 
 ## Contact 
-* Atsuki Uchida -  
+* [Atsuki Uchida - auchida1@my.bcit.ca](mailto:auchida1@my.bcit.ca)
 * [Juan Escalada - jescalada@my.bcit.ca](mailto:jescalada@my.bcit.ca)
-* Stefan Chen - 
+* [Stefan Chen - zchen158@my.bcit.ca](mailto:zchen158@my.bcit.ca)
 
 ## Acknowledgements 
 * <a href="https://ajax.googleapis.com/">jQuery</a>

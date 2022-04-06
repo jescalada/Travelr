@@ -18,8 +18,8 @@ function loadUserInfo() {
                currentUserName = userName;
                // Insert various user parameters to DOM using jquery
                $("#navbarDropdownMenuLink").text(userName);
-               $("#my-profile-link-navbar").attr("onclick", `location.href='../profile.html?id=${user.uid}';`);
-               $("#footer-profile-icon").attr("onclick", `location.href='../profile.html?id=${user.uid}';`);
+               $("#my-profile-link-navbar").attr("onclick", `location.href='../html/profile.html?id=${user.uid}';`);
+               $("#footer-profile-icon").attr("onclick", `location.href='../html/profile.html?id=${user.uid}';`);
             })
         } else {
             // No user is signed in.
