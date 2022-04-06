@@ -55,4 +55,14 @@ function loadGroupDoc(groupDoc) {
   $("#results").append(groupListItem);
 }
 
+// Logs out the current user
+function logout() {
+  firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+      window.location.href = "index.html"; // Redirects to index.html
+    }).catch((error) => {
+      console.log(error);
+    });
+} 
+
 displayGroups();
