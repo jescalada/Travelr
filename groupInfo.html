@@ -59,9 +59,9 @@
           <div class="d-flex py-4">
             <button class="btn btn-outline-primary" type="button">Details</button>
             <button type="button" class="btn btn-primary mx-2" id="join"
-              onClick="joinGroup()">&nbsp;&nbsp;Join&nbsp;&nbsp;</button>
-            <button type="button" id="edit-info-modal-button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit-info-modal"
-              data-bs-whatever="@mdo" hidden>Edit Info</button>
+                onClick="joinGroup()">&nbsp;&nbsp;Join&nbsp;&nbsp;</button>
+              <button type="button" id="edit-info-modal-button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit-info-modal"
+                data-bs-whatever="@mdo" hidden><i class="zmdi zmdi-edit"></i></button>
           </div>
         </div>
       </div>
@@ -76,18 +76,19 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
+            <!-- Edit group form -->
             <form>
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label"></label>
+                <label for="recipient-name" class="col-form-label">Name</label>
                 <input type="text" class="form-control" id="edit-group-name">
               </div>
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label"></label>
+                <label for="recipient-name" class="col-form-label">Location</label>
                 <input type="text" class="form-control" id="edit-location">
               </div>
               <div class="row">
                 <div class="col-lg-9 mb-3">
-                  <label for="message-text" class="col-form-label"></label>
+                  <label for="message-text" class="col-form-label">Intro</label>
                   <textarea class="form-control" id="edit-group-intro"></textarea>
                 </div>
                 <div class="col-lg-3 mb-3">
@@ -104,6 +105,7 @@
               </div>
             </form>
           </div>
+          <!-- Edit group modal footer (submit or close) -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" onclick="saveGroupInfo()">Save</button>
@@ -133,10 +135,6 @@
                 <img
                   src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                   class="d-block w-100" alt="" id="group-photo">
-              </div>
-              <div class="carousel-item">
-                <img src="https://t4.ftcdn.net/jpg/03/99/12/41/360_F_399124149_L3lTd03yuk7b0lhOhoqbJ0dc6Wjw6WQH.jpg"
-                  class="d-block w-100" alt="">
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">

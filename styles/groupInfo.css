@@ -14,6 +14,12 @@ i {
   color: gray;
 }
 
+.zmdi-edit {
+  color: white;
+  padding: 0.1rem;
+  font-size: 2rem;
+}
+
 .list-group-item {
   background-color: #ECEBFE;
 }
