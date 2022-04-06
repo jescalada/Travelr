@@ -38,5 +38,15 @@ function getCurrentUserName() {
     return currentUserName;
 }
 
-// User info is loaded by default in all pages
+// Logs out the current user
+function logout() {
+    console.log("logging out user");
+    firebase.auth().signOut().then(() => {
+        // Sign-out successful.
+        window.location.href = "index.html"; // Redirects to index.html
+      }).catch((error) => {
+        // An error happened.
+      });
+}
+
 loadUserInfo();
