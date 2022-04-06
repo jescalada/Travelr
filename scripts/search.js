@@ -1,42 +1,45 @@
 // Creates a group and stores it into database.
 function createGroup() {
-    // Obtains the values of these parameters from the DOM and sets them to variables
-    let groupName = $("#group_name").val();
-    let location = $("#location").val();
-    let maxSize = $("#max_size").val();
-    let groupIntro = $("#group_intro").val();
-    let groupPhotoURL = $("#group-image-url").val();
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid);
             var userID = user.uid;
             currentUser.get() // gets the document for the current user
                 .then(userDoc => { // Start a new collection called groups and add all data in it.
-                    db.collection("groups").add({
-                            group_name: groupName,
-                            location: location,
-                            max_size: maxSize,
-                            group_intro: groupIntro,
-                            group_photo: groupPhotoURL, 
-                            users: [
-                                userID, // First user represents the leader
-                            ]
-                        })
-                        .then(groupDoc => { // Using the document of the recently created group
-                            currentUser.set({ // Set this group into the groups list for the user creating this group
-                                    groups: firebase.firestore.FieldValue.arrayUnion(groupDoc.id)
-                                }, {
-                                    merge: true
-                                })
-                                .then(function () {
-                                    window.location.href = `search.html?location=${location}`; // Reload the page upon success
-                                });
-                        });
+                    addGroupToDatabase(userID);
                 })
-        } else {
-            window.location.href = 'login.html';
         }
     });
+}
+
+// Adds a group to database, takes a userID which is the creator of the group
+function addGroupToDatabase(userID) {
+    // Obtains the values of these parameters from the DOM and sets them to variables
+    let groupName = $("#group_name").val();
+    let location = $("#location").val();
+    let maxSize = $("#max_size").val();
+    let groupIntro = $("#group_intro").val();
+    let groupPhotoURL = $("#group-image-url").val();
+    db.collection("groups").add({
+            group_name: groupName,
+            location: location,
+            max_size: maxSize,
+            group_intro: groupIntro,
+            group_photo: groupPhotoURL,
+            users: [
+                userID, // First user represents the leader
+            ]
+        })
+        .then(groupDoc => { // Using the document of the recently created group
+            currentUser.set({ // Set this group into the groups list for the user creating this group
+                    groups: firebase.firestore.FieldValue.arrayUnion(groupDoc.id)
+                }, {
+                    merge: true
+                })
+                .then(function () {
+                    window.location.href = `search.html?location=${location}`; // Reload the page upon success
+                });
+        });
 }
 
 // Searches for groups given a city query
