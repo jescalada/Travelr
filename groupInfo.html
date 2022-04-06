@@ -19,7 +19,7 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-  </script>
+    </script>
 
   <!-------------------------------------------------------->
   <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -44,7 +44,7 @@
 </head>
 
 <body>
-  <!-- our own navbar goes here -->
+  <!-- Top navbar -->
   <nav id="navbarPlaceholder"></nav>
 
   <!-- Group information jumbotron -->
@@ -59,9 +59,9 @@
           <div class="d-flex py-4">
             <button class="btn btn-outline-primary" type="button">Details</button>
             <button type="button" class="btn btn-primary mx-2" id="join"
-                onClick="joinGroup()">&nbsp;&nbsp;Join&nbsp;&nbsp;</button>
-              <button type="button" id="edit-info-modal-button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit-info-modal"
-                data-bs-whatever="@mdo" hidden><i class="zmdi zmdi-edit"></i></button>
+              onClick="joinGroup()">&nbsp;&nbsp;Join&nbsp;&nbsp;</button>
+            <button type="button" id="edit-info-modal-button" class="btn btn-primary" data-bs-toggle="modal"
+              data-bs-target="#edit-info-modal" data-bs-whatever="@mdo" hidden><i class="zmdi zmdi-edit"></i></button>
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Members and Group photos -->
     <div class="d-flex flex-wrap row p-2 gx-4">
 
@@ -123,7 +123,7 @@
         <div class="list-group" id="member-list">
         </div>
       </div>
-      
+
       <!-- Photos (Carousel) -->
       <div class="col-md-6 mt-4">
         <div class="h-100 bg-light rounded-3">
@@ -155,15 +155,12 @@
 
   </div>
 
-  <!-- our own footer goes here-->
+  <!-- Footer-->
   <nav id="footerPlaceholder"></nav>
 
-  <!---------------------------------------------->
-  <!-- Your own JavaScript functions go here    -->
-  <!---------------------------------------------->
+  <!-- Scripts  -->
   <script src="./scripts/firebaseAPI_DTC15.js"></script>
   <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/script.js"></script>
   <script src="./scripts/authentication.js"></script>
   <script src="./scripts/groupInfo.js"></script>
   <script src="./scripts/load_user.js"></script>
