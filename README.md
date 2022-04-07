@@ -75,7 +75,8 @@ It has the following subfolders and files:
 ## Resources
 - Icons by [Iconify Design](https://icon-sets.iconify.design/zmdi/) (Open Source)
 - Code snippets from [Bootdey](https://www.bootdey.com/) (Free to use)
-- Logo made by Juan
+- Logo made by Juan 
+- Login image from [unsplash](https://unsplash.com/)(Free to use)
 
 ## Contact 
 * [Atsuki Uchida - auchida1@my.bcit.ca](mailto:auchida1@my.bcit.ca)
