@@ -1,5 +1,3 @@
-var currentUser;
-
 // Loads a user's data into the DOM
 // Two possible cases:
 // Logged in user, accesses own profile
@@ -11,6 +9,7 @@ function loadUserData() {
         // Check if user is signed in:
         if (user) {
             if (user.uid == userId) { // User is viewing own profile
+                console.log("Own profile!!");
                 currentUser = db.collection("users").doc(user.uid); // Get the document for current user.
                 currentUser.get()
                     .then(userDoc => {
@@ -18,9 +17,11 @@ function loadUserData() {
                         console.log(`User data: ${JSON.stringify(userData)}`);
                         insertDataIntoDOM(userData);
                         // Append Edit functionality only if current user viewing own profile
-                        $("#change-info-buttons").prop('hidden', false);
+                        $("#save-info-button").attr("hidden", false);
+                        $("#edit-info-button").attr("hidden", false);
                     })
             } else {
+                console.log("Other's profile!!");
                 // User is logged in, but viewing someone else's profile
                 currentUser = db.collection("users").doc(userId);
                 //get the document for current user.
@@ -30,7 +31,8 @@ function loadUserData() {
                         // We insert the data into the front end using jQuery
                         insertDataIntoDOM(userData);
                         // Append Edit functionality only if current user viewing own profile
-                        $("#change-info-buttons").prop('hidden', true);
+                        $("#save-info-button").attr("hidden", true);
+                        $("#edit-info-button").attr("hidden", true);
                     })
             }
         }
