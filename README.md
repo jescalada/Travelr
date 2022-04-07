@@ -68,7 +68,6 @@ It has the following subfolders and files:
 ├── text                            # Folder for text containers
         /footer.html                # code snippet for generating the footer
         /nav.html                   # code snippet for generating the navbar
-
 ```
 
 
@@ -85,6 +84,5 @@ It has the following subfolders and files:
 ## Acknowledgements 
 * <a href="https://ajax.googleapis.com/">jQuery</a>
 * <a href="https://fonts.google.com/">Google Fonts</a>
-
 * <a href="https://getbootstrap.com/">Bootstrap</a>
 * <a href="https://www.bootdey.com/">Bootdey (Bootstrap snippets)</a>
