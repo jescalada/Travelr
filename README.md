@@ -43,6 +43,7 @@ It has the following subfolders and files:
         /icons
             /travelr-logo.svg
         /login.jpg
+            /https://unsplash.com
         
 ├── scripts                         # Folder for scripts
         /authentication.js          # Firebase authentication backend
