@@ -10,6 +10,9 @@
 ## General Info
 Travelr is an app that allows users to form groups and chat together so they can find a place to stay in big cities.
 	
+## Website
+[Travelr](https://travelr-bcit.netlify.app)
+	
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
